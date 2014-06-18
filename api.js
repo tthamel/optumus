@@ -24,7 +24,7 @@ app.get('/', function(req, res, next) {
         res.json(200, {
             currentPage: req.query.page || 1,
             pages: pageCount,
-            count: itemCount,
+            total: itemCount,
             results: paginatedResults
         });
     });
