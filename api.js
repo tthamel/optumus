@@ -8,9 +8,10 @@ var PostSchema = new mongoose.Schema();
 PostSchema.plugin(mongoosePaginate);
 var Post = mongoose.model('Post', PostSchema);
 
+var term, limit;
+
 app.get('/', function(req, res, next) {
-    var term = {};
-    var limit = 10;
+    term = {}, limit = 10;
     if(req.query.term) {
         var regex = new RegExp(req.query.term, 'i');
         term = { Title: regex, $or: [{ Snippet: regex }, { Contents: regex }] };
