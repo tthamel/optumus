@@ -16,8 +16,8 @@ app.get('/', function(req, res, next) {
         term.Contents = new RegExp(req.query.term, 'i');
     }
     if(req.query.limit) {
-        if(req.query.limit > 0 && req.query.limit <= 100) limit = req.query.limit;
-        if(req.query.limit > 100) limit = 100;
+        if(req.query.limit > 0 && req.query.limit <= 1000) limit = req.query.limit;
+        if(req.query.limit > 1000) limit = 1000;
     }
     Post.paginate(term, req.query.page, limit, function(error, pageCount, paginatedResults, itemCount) {
         if(error) return res.json(403, { error: error });
