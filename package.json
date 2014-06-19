@@ -1,14 +1,31 @@
 {
-  "name": "optumus-api",
-  "author": "John Hollow",
+  "name": "optumus-prime-hackathon",
+  "description": "optumus-prime-hackathon",
+  "version": "0.0.1",
   "private": true,
-  "version": "0.1.0",
-  "dependencies": {
-    "express": "^4.4.3",
-    "mongoose": "^3.8.12",
-    "mongoose-paginate": "^3.1.0"
+  "scripts": {
+    "start": "node app",
+    "setup": "npm install & bower install"
   },
-  "engines": {
-    "node": ">=0.10.0"
+  "dependencies": {
+    "express": "~4.2.0",
+    "mongoose": "3.8.x",
+    "cors": "2.3.1",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-jade": "^0.12.0",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-uglify": "^0.2.2",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-html2js": "^0.2.7",
+    "node-debug": "0.1.0"
   }
 }

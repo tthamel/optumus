@@ -1,0 +1,14 @@
+doctype html
+html(ng-app="hackathon" lang="en")
+  head
+    title= title
+    meta(charset='utf8')
+    base(href='/')
+
+    //link(rel='stylesheet', href='/css/style.css')
+    script(src='js/example-widget.js')
+    script(src='js/hackathon.min.js')
+
+  body
+      //include header.jade
+      ng-view
