@@ -12,7 +12,7 @@ router.use(function(req, res, next) {
 });
 
 function index(req, res) {
-  res.render('layout', { title: 'Hackathon' });
+  res.render('index', { title: 'Hackathon' });
 }
 
 /* GET users listing. */
