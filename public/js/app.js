@@ -31,106 +31,75 @@ var NbCheckNetworkTimeout = 0;
 var StreamConnected = 0;
 
 function startNetwork() {
-    try {
-        jQuery('#connection').show();
-        jQuery('#connection').removeClass('hidden');
+  try {
+    console.log('startNetwork()');
+    jQuery('#connection').show();
+    jQuery('#connection').removeClass('hidden');
 
-        var checkNetwork = function() {
-            if (CheckNetworkTimeout !== undefined) {
-                window.clearTimeout(CheckNetworkTimeout);
-                CheckNetworkTimeout = undefined;
-            }
-            var now = new Date();
-            osg.log("checkNetwork " + now.getTime()/1000);
-            if (FakeTweets === undefined) {
-                var elapsed = (now.getTime()-LastTweetReceived.getTime())/1000.0;
-                if (elapsed > ConnectionTimeoutCheck) {
-                    //showConnection();
-                    osg.log("no tweets received for " + ConnectionTimeoutCheck +" seconds");
-                    if (NbCheckNetworkTimeout > 3) {
-                        osg.log("no tweets received for " + ConnectionTimeoutCheck*3 +" seconds, restart connection");
-                        if ( Socket !== undefined) {
-                            Socket.connect();
-                        } else {
-                            startNetwork();
-                        }
-                        NbCheckNetworkTimeout = 0;
-                        return;
-                    } else {
-                        showConnection();
-                    }
-                    NbCheckNetworkTimeout += 1;
-                    //startNetwork();
-                    //return;
-                } else {
-                    NbCheckNetworkTimeout = 0;
-                }
-                CheckNetworkTimeout = setTimeout(checkNetwork, ConnectionTimeoutCheck*1000);
-            }
-        };
-
-        // change here to point to your socket.io server
-        //var socket = new io.Socket("184.106.112.6",{ port: 22048 });
-        var socket = new io.Socket(document.location.hostname, {transports:['websocket', 'flashsocket', 'htmlfile', 'xhr-polling']} );
-        Socket = socket;
-        socket.connect();
-        socket.on('message', function(message){
-            hideConnection();
-            LastTweetReceived = new Date();
-            processTweet(message);
-        });
-        socket.on('connect', function(message){
-            Connected = true;
-            StreamConnected += 1;
-            if (StreamConnected === 1) {
-                showInstructions();
-            }
-            hideConnection();
-            LastTweetReceived = new Date();
-            osg.log("connected to server");
-            //checkNetwork();
-        });
-        socket.on('disconnect', function(message){
-            if (DemoState.running === true) {
-                showConnection();
-                osg.log("disconnect, try to reconnect");
-
-                if ( Socket !== undefined) {
-                    Socket.connect();
-                } else {
-                    startNetwork();
-                }
-            }
-        });
-        socket.on('error', function(message) {
-            osg.log("error, try to reconnect");
-            showConnection();
-            if ( Socket !== undefined) {
-                Socket.connect();
-            } else {
-                startNetwork();
-            }
-        });
-
-        osg.log("run the checker every " + ConnectionTimeoutCheck + " seconds");
-        setTimeout(checkNetwork, ConnectionTimeoutCheck*1000);
-
-    } catch (er) {
-        hideConnection();
+    // change here to point to your socket.io server
+//      var socket = new io.Socket("184.106.112.6",{ port: 22048 });
+    Socket = io();
+//      Socket.connect();
+    Socket.on('tweet', function (message) {
+//          console.log('TWEET RECEIVED!!');
+      //console.log(message);
+      hideConnection();
+      LastTweetReceived = new Date();
+      processTweet(message);
+    });
+    Socket.on('connect', function (message) {
+      Connected = true;
+      StreamConnected += 1;
+      if (StreamConnected === 1) {
         showInstructions();
-        osg.log(er);
-        osg.log("offline mode, emitting fake tweets");
-        jQuery.getJSON("js/samples.json", function(data) {
-            osg.log("offline data ready, emitting fake tweets");
-            FakeTweets = data;
-            var tweetIndex = 0;
-            var emitFakeTweet = function() {
-                tweetIndex = (tweetIndex+1)%FakeTweets.length;
-                processTweet(FakeTweets[tweetIndex]);
-                window.setTimeout(emitFakeTweet, 0.25*1000);
-            };
-            emitFakeTweet();
+      }
+      hideConnection();
+      LastTweetReceived = new Date();
+      Socket.emit('message');
+      console.log("connected to server");
+      //checkNetwork();
+    });
+    Socket.on('disconnect', function (message) {
+      if (DemoState.running === true) {
+        showConnection();
+        osg.log("disconnect, try to reconnect");
 
-        });
-    }
+        if (Socket !== undefined) {
+          Socket.connect();
+        } else {
+          startNetwork();
+        }
+      }
+    });
+    Socket.on('error', function (message) {
+      osg.log("error, try to reconnect");
+      showConnection();
+      if (Socket !== undefined) {
+        Socket.connect();
+      } else {
+        startNetwork();
+      }
+    });
+
+    osg.log("run the checker every " + ConnectionTimeoutCheck + " seconds");
+    //setTimeout(checkNetwork, ConnectionTimeoutCheck*1000);
+
+  } catch (er) {
+    hideConnection();
+    showInstructions();
+    osg.log(er);
+    osg.log("offline mode, emitting fake tweets");
+    jQuery.getJSON("js/samples.json", function (data) {
+      osg.log("offline data ready, emitting fake tweets");
+      FakeTweets = data;
+      var tweetIndex = 0;
+      var emitFakeTweet = function () {
+        tweetIndex = (tweetIndex + 1) % FakeTweets.length;
+        processTweet(FakeTweets[tweetIndex]);
+        window.setTimeout(emitFakeTweet, 0.25 * 1000);
+      };
+      emitFakeTweet();
+
+    });
+  }
 }
