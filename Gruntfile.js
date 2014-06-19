@@ -54,7 +54,6 @@ module.exports = function(grunt) {
           'public/vendor/angular/angular.min.js',
           'public/vendor/angular-route/angular-route.min.js',
           'public/vendor/angular-cache/dist/angular-cache.min.js',
-          'public/vendor/ids-core/ids-core.min.js',
           'app/appRoutes.js',
           'app/app.js',
           'app/core/**/*.js',

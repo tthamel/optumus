@@ -2,13 +2,11 @@
   'use strict';
 
 
-  angular.module('dhn.controllers')
+  angular.module('hackathon.controllers')
     .controller('indexCtrl', [
       '$scope', function($scope){
 
         console.log('indexCtrl');
-
-        ids.widgets.login.render({elementId: 'test'});
 
 
       }]);
