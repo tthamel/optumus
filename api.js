@@ -13,8 +13,7 @@ var term, limit;
 app.get('/', function(req, res, next) {
     term = {}, limit = 10;
     if(req.query.term) {
-        var regex = new RegExp(req.query.term, 'i');
-        term = { Title: regex, $or: [{ Snippet: regex }, { Contents: regex }] };
+        term.Contents = new RegExp(req.query.term, 'i');
     }
     if(req.query.limit) {
         if(req.query.limit > 0 && req.query.limit <= 100) limit = req.query.limit;
@@ -32,5 +31,5 @@ app.get('/', function(req, res, next) {
 });
 
 mongoose.connect(process.env.MONGOHQ_URL || 'mongodb://admin:hollow@kahana.mongohq.com:10055/app26509339', function() {
-   app.listen(process.env.PORT || 3000); 
+   app.listen(process.env.PORT || 3000);
 });
