@@ -56,8 +56,13 @@ osgGA.OrbitManipulator2 = function () {
   this.contactsPosition = [];
   this.zoomModeUsed = false;
 
-  this.leapController = new Leap.Controller();
+  this.leapController = new Leap.Controller({
+    enableGestures: true,
+    frameEventName: 'animationFrame'
+  });
   this.firstValidFrame = null;
+
+  this.leapController.connect();
 };
 
 osgGA.OrbitManipulator2.prototype = {
