@@ -14,6 +14,20 @@
   var routesApi = require('./routes/api')(dbUtils);
 
   var app = express();
+  var http = require('http');
+  var server = http.createServer(app);
+  var io = require('socket.io').listen(server);
+    
+    
+    // SOCKET IO CODE
+    io.sockets.on('connection', function (socket) {
+        console.log('connected');
+
+        socket.on('message', function(message) {
+            io.sockets.emit('message', message);
+        });
+    });
+    
 
   // view engine setup
   app.set('views', path.join(__dirname, 'app'));
@@ -66,7 +80,7 @@
 
   app.set('port', process.env.PORT || 3000);
 
-  var server = app.listen(app.get('port'), function() {
+  server.listen(app.get('port'), function() {
     console.log('Express server listening on port ' + server.address().port);
   });
 
