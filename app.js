@@ -1,5 +1,68 @@
 (function(){
   'use strict';
+    
+  var SEARCH_KEYWORDS = [
+//    'aching',
+//    'allergy',
+//    'allergies',
+//    'alzheimers',
+//    'asthma',
+//    'asthma attack',
+//    'asthma medicine',
+//    'blood',
+//    'blood pressure',
+//    'bloody sneezing',
+//    'brain cancer',
+//    'breast cancer',
+//    'cancer',
+//    'chest',
+//    'chest pain',
+//    'chest pains',
+//    'cold coughing',
+//    'congested malam',
+//    'congested nose',
+//    'congestion',
+//    'coughing',
+//    'cough',
+//    'dangerous allergy',
+//    'deaths',
+//    'death',
+//    'dementia',
+//    'fever',
+//    'flu',
+//    'food allergy',
+//    'headaches',
+//    'headache',
+//    'hearing loss',
+//    'heart',
+//    'heathcare costs',
+//    'loud coughing',
+//    'night sweats',
+//    'pain',
+//    'painful coughing',
+//    'PDSD',
+//    'powerful asthma medicine',
+//    'sharp pain',
+//    'shortness',
+//    'sick feeling',
+//    'sinus',
+//    'sneezes',
+//    'sneezing',
+//    'sneeze',
+//    'sore',
+//    'sore throat',
+//    'stress',
+//    'stuffy nose',
+//    'symptom',
+//    'symptoms',
+//    'toxic load',
+    'Optum',
+    'UHC',
+    'United Health Care',
+    'UHG',
+    'AARP Health',
+    'OptumRx'
+  ];
 
   var express = require('express');
   var path = require('path');
@@ -12,6 +75,14 @@
   var dbUtils = require('./db/utils')(mongoose);
   var routes = require('./routes/index');
   var routesApi = require('./routes/api')(dbUtils);
+    
+  var Twitter = require('node-twitter');
+  var twitterStreamClient = new Twitter.StreamClient(
+    'NsCqa2yS6DpA3YQEZGOT2nBJq',
+    'KvcED4ctI3K8aIU8ldIU2zfiCx2IVUN0bJEX3BC28FYKHpQ1MD',
+    '454062066-Ks1gCApBuvl6dCmhjEzXHBcLKBR3eA0uvcaJMYWF',
+    'b8AJBVTt6bE5kdzQtZnuhwfFg53Wn4MBQszqeFvQmgun4'
+  );
 
   var app = express();
   var http = require('http');
@@ -450,11 +521,17 @@
   io.on('connection', function (socket) {
       console.log('connected');
 
-      setInterval(function(){
+//      setInterval(function(){
+//        io.sockets.emit('tweet', testTweets[ Math.floor(Math.random() * testTweets.length)]);
+//      }, 2000);
+      
+      twitterStreamClient.on('tweet', function(tweet) {
+        console.log(tweet);
         io.sockets.emit('tweet', testTweets[ Math.floor(Math.random() * testTweets.length)]);
-      }, 2000);
-  });
-    
+      });
+  }); 
+
+  twitterStreamClient.start(SEARCH_KEYWORDS, [-180,-90,180,90]);
 
   // view engine setup
   app.set('views', path.join(__dirname, 'app'));
