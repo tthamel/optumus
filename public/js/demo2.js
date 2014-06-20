@@ -741,7 +741,7 @@ function displayHtmlTweetContent(tweet)
 
     var highlightTweetKeyword = function (text, keyword) {
         var exp = new RegExp(keyword, 'g');
-        return text.replace(exp,"<span style=\"color:rgb(234,170,0);font-size:20px;\">" + keyword + "</span>");
+        return keyword ? text.replace(exp,"<span style=\"color:rgb(234,170,0);font-size:20px;\">" + keyword + "</span>") : text;
     }
 
     var text = tweet.text;
