@@ -771,7 +771,11 @@ function displayHtmlTweetContent(tweet)
     jQuery("img#closeTweet").click(function() {
         jQuery("#TweetContent").addClass('hidden');
     });
-
+    jQuery.ajax({
+      type: 'POST',
+      url: '/tweet-speak',
+      data: { text: tweet.text }
+    });
 }
 
 function createScene()

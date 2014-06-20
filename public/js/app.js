@@ -29,6 +29,7 @@ var ConnectionTimeoutCheck = 10;
 var CheckNetworkTimeout;
 var NbCheckNetworkTimeout = 0;
 var StreamConnected = 0;
+var tweetCount = 0;
 
 function startNetwork() {
   try {
@@ -46,6 +47,7 @@ function startNetwork() {
       hideConnection();
       LastTweetReceived = new Date();
       processTweet(message);
+      tweetCount++;
     });
     Socket.on('connect', function (message) {
       Connected = true;
