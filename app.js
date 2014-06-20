@@ -70,6 +70,7 @@
   var routes = require('./routes/index');
   var routesApi = require('./routes/api')(dbUtils);
   var request = require('request');
+  var say = require('say');
 
   var Twitter = require('node-twitter');
   var twitterStreamClient = new Twitter.StreamClient(
@@ -112,6 +113,11 @@
 
   app.get('/profile_images/:id/:photo', function(req, res) {
     request('http://pbs.twimg.com/profile_images/' + req.params.id + '/'+ req.params.photo).pipe(res);
+  });
+
+  app.post('/tweet-speak', function(req, res) {
+    say.speak('Vicki', req.body.text);
+    res.send(200);
   });
 
   // Routes
