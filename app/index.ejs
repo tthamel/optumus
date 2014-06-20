@@ -10,6 +10,7 @@
     <script>
         var Viewer;
     </script>
+    <script type="text/javascript" src="js/smoothie.js"></script>
     <script type="text/javascript" src="js/jquery-1.4.2.js"></script>
     <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="js/code.js"></script>
@@ -161,6 +162,10 @@
     </div>
 </div>
 
+<section id="live-data" class="bubble">
+    <canvas id="smoothie-chart" width="150" height="62"></canvas>
+</section>
+
 <section id="credits" class="bubble">
     <header><span id="arrow"></span>Team</header>
     <hr />
@@ -185,6 +190,19 @@
 <canvas id="TextRendering" width="512" height="32"> </canvas>
 <canvas id="HeightMap" width="128" height="64"> </canvas>
 <canvas id="HeightMap2" width="128" height="64"> </canvas>
+
+<script>
+    var chart = new SmoothieChart({millisPerPixel:89}),
+            canvas = document.getElementById('smoothie-chart'),
+            series = new TimeSeries();
+
+    setInterval(function() {
+        series.append(new Date().getTime(), Math.random());
+    }, 1000);
+
+    chart.addTimeSeries(series, {lineWidth:2,strokeStyle:'#E1620B'});
+    chart.streamTo(canvas, 1763);
+</script>
 
 </body>
 </html>
