@@ -67,17 +67,6 @@
 <body>
 
 <header id="masthead">
-    <div id="logo">
-        <h1 class="acknowledgement"><span>Globe</span><span>Tweeter</span></h1>
-    </div>
-    <div id="sharing">
-        <div id="facebook">
-            <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like layout="button_count" show_faces="false" width="100"></fb:like>
-        </div>
-        <div id="twitter">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://mozillademos.org/demos/globetweeter/demo.html" data-count="horizontal" data-text="Watch Twitter's activity in real-time with #globetweeter - WebGL demo by @trigrou + @glecollinet" data-via="firefox" data-related="trigrou:Code by, glecollinet:Design by">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-        </div>
-    </div>
 	<span id="pitch" class="cartoBook">
 		<img src="img/optumlogo.png" />
 	</span>
@@ -132,7 +121,7 @@
         <ul>
             <li>
                 <input type="text" placeholder="Live Search" class="live-search" />
-                <button>&gt;</button>
+                <div class="orange-button small-button">&gt;</div>
             </li>
             <li><div class="campaign">Heart Disease<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
             <li><div class="campaign">Optum<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
@@ -168,33 +157,34 @@
     <div class="bubble">
         <span>New Campaign</span>
         <form>
-          <label>Campaign Name</label>
-          &nbsp; &nbsp; <input type="text" name="campaign">
-<br>
-          <label>Campaign Criteria</label>
-          &nbsp;  <input type="text" name="criteria">
-<br>
-          <label>Data Source Input</label>
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      <br>
-        <input type="checkbox" name="social" value="facebook">Facebook
-      <br>
-        <input type="checkbox" name="social" value="twitter">Twitter
-      <br>
-        <input type="checkbox" name="marketing" value="email">Email Campaign
-      <br>
-        <input type="checkbox" name="news" value="rss">RSS 
-      <br>
-<label> Start Campaign </label>
-&nbsp; &nbsp; <input id="startdate" name="startdate" min="2014-01-01" max="2100-01-01" type="date">
-<br>
-<label> Finish Campaign </label>
-&nbsp; <input id="enddate" name="enddate" min="2014-01-01" max="2100-01-01" type="date">
-
+            <ul>
+                <li>
+                    <hr />
+                    <label>Campaign Name</label>
+                    <input type="text" name="campaign" class="form-right">
+                </li>
+                <li>
+                    <label>Campaign Criteria</label>
+                    <input type="text" name="criteria" class="form-right">
+                    <hr />
+                </li>
+                <li>
+                    <label>Start Campaign</label>
+                    <input id="startdate" name="startdate" min="2014-01-01" max="2100-01-01" type="date" class="form-right">
+                </li>
+                <li>
+                    <label>Finish Campaign</label>
+                    <input id="enddate" name="enddate" min="2014-01-01" max="2100-01-01" type="date" class="form-right">
+                    <hr />
+                </li>
+                <li><label>Data Source Input</label></li>
+                <li><input type="checkbox" name="social" value="facebook">Facebook</li>
+                <li><input type="checkbox" name="social" value="twitter">Twitter</li>
+                <li><input type="checkbox" name="marketing" value="email">Email Campaign</li>
+                <li><input type="checkbox" name="news" value="rss">RSS</li>
+            </ul>
         </form>
-        <div id="campaignForm" class="cartoBold orange-button">
-            Launch New Campaign
-        </div>
+        <div id="campaignForm" class="cartoBold orange-button">Launch New Campaign</div>
         <span id="location-instructions"></span>
         <span class="dismiss blue"><img src="img/dismiss.png" alt="dismiss">close menu</span>
     </div>

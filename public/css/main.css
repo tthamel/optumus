@@ -338,6 +338,30 @@ h1 span:nth-child(2) {
 	transition:0.5s all ease;
 }
 
+#demo-instructions hr {
+	margin: 15px auto;
+}
+
+
+
+#demo-instructions ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#demo-instructions ul li {
+	clear: both;
+}
+
+#demo-instructions ul input[type=checkbox] {
+	margin-left: 20px;
+}
+
+.form-right {
+	float: right;
+}
+
 #demo-instructions .bubble {
 	padding-top:100px;
 	margin-left:0px;
@@ -388,6 +412,12 @@ h1 span:nth-child(2) {
 	color:#343741;
 }
 
+.small-button {
+	display: inline-block;
+	width: 20px;
+	padding: 0;
+	font-size:18px;
+}
 
 /*#campaignForm:hover {
 	margin:20px auto;
