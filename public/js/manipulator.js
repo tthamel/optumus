@@ -55,13 +55,6 @@ osgGA.OrbitManipulator2 = function () {
   this.contacts = [];
   this.contactsPosition = [];
   this.zoomModeUsed = false;
-
-  this.leapController = new Leap.Controller({
-    enableGestures: true,
-    frameEventName: 'animationFrame'
-  });
-
-  this.leapController.connect();
 };
 
 osgGA.OrbitManipulator2.prototype = {
@@ -177,9 +170,9 @@ osgGA.OrbitManipulator2.prototype = {
     var x = 0.0;
     var y = 0.0;
 
-    if (this.leapController && this.leapController.frame()){
-      var frame = this.leapController.frame();
-      if (frame.valid && frame.hands.length > 0){
+    if (LeapController && LeapController.frame()){
+      var frame = LeapController.frame();
+      if (frame.valid && frame.hands.length === 1){
         var hand = frame.hands[0];
         var fingerCount = hand.fingers.length;
 
