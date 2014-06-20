@@ -134,7 +134,7 @@
     }, function (err, res, body) {
         _.chain(sample_json).shuffle().first(_.random(50, 500)).each(function (tweet) {
           var sample = _.sample(body.results);
-          tweet.text = sample.Contents;
+          tweet.text = (sample && sample.Contents) || tweet.text;
           tweet.user.profile_image_url = "localtweets/" + tweet.user.profile_image_url.split('/').pop();
           tweet.fake = true;
           io.sockets.emit('tweet', tweet);
