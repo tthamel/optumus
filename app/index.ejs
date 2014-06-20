@@ -234,7 +234,8 @@
             series = new TimeSeries();
 
     setInterval(function() {
-        series.append(new Date().getTime(), Math.random());
+        series.append(new Date().getTime(), tweetCount);
+        tweetCount = 0;
     }, 1000);
 
     chart.addTimeSeries(series, {lineWidth:2,strokeStyle:'#E1620B'});
