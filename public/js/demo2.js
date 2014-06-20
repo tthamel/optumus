@@ -900,8 +900,32 @@ function createScene()
         if (date - updateCountryStatsLastUpdate > 0.3) {
             updateCountryStatsLastUpdate = date;
             var array = [];
+            var flagCode, countryCode, name, valid;
+
             for (var k in data) {
-                array.push({'key': k, 'nb':data[k].hits });
+              name = data[k].name;
+              valid = true;
+
+              if (Country2Flag[name] !== undefined) {
+                flagCode = Country2Flag[name];
+              }
+              else {
+                osg.log("Can't find flag for " + name);
+                valid = false;
+              }
+
+              if (Country2ID[name] !== undefined) {
+                countryCode = Country2ID[name];
+              }
+              else {
+                osg.log("Can't find country for " + name);
+                valid = false;
+              }
+
+              // don't add countries with no flag or code
+              if (valid){
+                array.push({'key': k, 'nb':data[k].hits, 'flag': flagCode.toLowerCase(), 'country': countryCode });
+              }
             }
             array.sort(function(a, b) {
                 return b.nb - a.nb;
@@ -913,12 +937,12 @@ function createScene()
             }
 
             var key;
-            var name;
 
             var setupGlow = function(l) {
                 l.addClass("glowing");
                 setTimeout(function() { l.removeClass("glowing");}, 200);
             };
+
 
             for (var i = 0, l = array.length; i < l; i++) {
                 key = array[i].key;
@@ -927,24 +951,7 @@ function createScene()
                 var location = data[key].location;
                 var iconSize = 20;
 
-                var flagCode;
-                var countryCode;
-
-                if (Country2Flag[name] !== undefined) {
-                    flagCode = Country2Flag[name];
-                } else {
-                    osg.log("Can't find flag for " + name);
-                }
-                array[i].flag = flagCode.toLowerCase();
-
-                if (Country2ID[name] !== undefined) {
-                    countryCode = Country2ID[name];
-                } else {
-                    osg.log("Can't find country for " + name);
-                }
-                array[i].country = countryCode;
-
-		var index = i + 1;
+		var index = i + 2;
 		var li = jQuery("#countries li:nth-child("+index.toString()+")");
 
                 if (currentRank === undefined || i >= (currentRank.length)) {
