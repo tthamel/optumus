@@ -1189,7 +1189,7 @@ function createScene()
 
     installProcessTweet(consumeTweet);
 
-    Viewer.manipulator.update(-2.0, 0);
+    Viewer.manipulator.update(-3.95, 0);
 
     if (!DisableWave) {
         WaveGenerator = new Wave();
