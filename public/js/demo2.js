@@ -778,6 +778,8 @@ function displayHtmlTweetContent(tweet)
     });
 }
 
+
+
 function createScene()
 {
     var optionsURL = function() {
@@ -1147,14 +1149,16 @@ function createScene()
                         }
                     }
                 };
-                img.src = "profile_images/" + tweet.user.profile_image_url.split('profile_images/').pop();
-                // temporary
-                // var src = "img/tweet.png";
-                // if (StreamConnected === 0) {
-                //     var basename = tweet.user.profile_image_url.split('/').pop();
-                //     src = "localtweets/" + basename;
-                // }
-                // img.src = src;
+
+                //temporary
+                var src = "img/tweet.png";
+                if (tweet.fake || StreamConnected === 0) {
+                    var basename = tweet.user.profile_image_url.split('/').pop();
+                    src = "localtweets/" + basename;
+                } else {
+                    src = "profile_images/" + tweet.user.profile_image_url.split('profile_images/').pop()
+                }
+                img.src = src;
             }
         };
 
@@ -1200,3 +1204,13 @@ function createScene()
     initializeInstructions(canvas, scene);
     return scene;
 }
+
+jQuery(document).ready(function () {
+    jQuery(".campaign").click(function () {
+        jQuery.ajax({
+          type: 'POST',
+          url: '/tweet-spam',
+          data: { keyword: jQuery(this).text() }
+        });
+    });
+});

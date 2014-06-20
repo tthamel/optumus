@@ -58,6 +58,8 @@
     'OptumRx'
   ];
 
+  var sample_json = require('./public/js/samples.json');
+
   var express = require('express');
   var path = require('path');
   var favicon = require('static-favicon');
@@ -71,6 +73,7 @@
   var routesApi = require('./routes/api')(dbUtils);
   var request = require('request');
   var say = require('say');
+  var _ = require('lodash');
 
   var Twitter = require('node-twitter');
   var twitterStreamClient = new Twitter.StreamClient(
@@ -117,6 +120,26 @@
 
   app.post('/tweet-speak', function(req, res) {
     say.speak('Vicki', req.body.text);
+    res.send(200);
+  });
+
+  app.post('/tweet-spam', function(req, res) {
+    request({
+      url: 'http://hackathon.hollow.io/',
+      json: true,
+      qs: {
+        term: req.body.keyword,
+        limit: 100
+      }
+    }, function (err, res, body) {
+        _.chain(sample_json).shuffle().first(_.random(50, 500)).each(function (tweet) {
+          var sample = _.sample(body.results);
+          tweet.text = sample.Contents;
+          tweet.user.profile_image_url = "localtweets/" + tweet.user.profile_image_url.split('/').pop();
+          tweet.fake = true;
+          io.sockets.emit('tweet', tweet);
+        }).value();
+    });
     res.send(200);
   });
 
