@@ -149,55 +149,81 @@ osgGA.OrbitManipulator2.prototype = {
     //this.goToLocation(-3.948104, -54.045366);
     return true;
   },
+
   updateWithDelay: function () {
-    var speed = 0.01;
-    var x = 0.0;
-    var y = 0.0;
-
-    var frame = this.leapController.frame();
-    if (frame.valid && frame.hands.length > 0){
-      var hand = frame.hands[0];
-      var fingerCount = hand.fingers.length;
-
-      if (fingerCount > 2){
-        var direction = frame.hands[0].palmVelocity;
-
-        x = -direction[0] * speed;
-        y = direction[2] * speed;
-      }
-
-    }
-
-    // var f = 1.0;
-    // var dt;
-    // var max = 2.0;
-    // var dx = this.dx;
-    // var dy = this.dy;
-    // if (this.buttonup) {
-    //   f = 0.0;
-    //   dt = ((new Date()).getTime() - this.time) / 1000.0;
-    //   if (dt < max) {
-    //     f = 1.0 - osgAnimation.EaseOutQuad(dt / max);
-    //   }
-    //   dx *= f;
-    //   dy *= f;
-    //
-    //   var min = 0.015;
-    //   if (Math.abs(dx) < min) {
-    //     dx = min * this.direction * this.motionWhenRelease;
-    //     this.dx = dx;
-    //   }
-    //
-    //   var val = Math.abs(this.dx) + Math.abs(this.dy);
-    //
-    // } else {
-    //   this.dx = 0;
-    //   this.dy = 0;
-    // }
+    var rotateDirection = this.getRotateDirection();
+    var x = rotateDirection.x;
+    var y = rotateDirection.y;
 
     if (Math.abs(x) + Math.abs(y) > 0.0) {
       this.computeRotation(x, y);
     }
+  },
+
+  getRotateDirection: function(){
+    var direction;
+
+    // first try to get direction from Leap. If we can't, use the mouse
+    direction = this.getRotateDirectionFromLeap();
+    if (!direction){
+      direction = this.getRotateDirectionFromMouse();
+    }
+
+    return direction;
+  },
+
+  getRotateDirectionFromLeap: function(){
+    var speed = 0.01;
+    var x = 0.0;
+    var y = 0.0;
+
+    if (this.leapController && this.leapController.frame()){
+      var frame = this.leapController.frame();
+      if (frame.valid && frame.hands.length > 0){
+        var hand = frame.hands[0];
+        var fingerCount = hand.fingers.length;
+
+        if (fingerCount > 2){
+          var direction = frame.hands[0].palmVelocity;
+
+          x = -direction[0] * speed;
+          y = direction[2] * speed;
+
+          return {x: x, y: y};
+        }
+      }
+    }
+
+    // if we got this far, we didn't have valid frame data
+    return false;
+  },
+
+  getRotateDirectionFromMouse: function(){
+    var f = 1.0;
+    var dt;
+    var max = 2.0;
+    var dx = this.dx;
+    var dy = this.dy;
+    if (this.buttonup) {
+      f = 0.0;
+      dt = ((new Date()).getTime() - this.time) / 1000.0;
+      if (dt < max) {
+        f = 1.0 - osgAnimation.EaseOutQuad(dt/max);
+      }
+      dx *= f;
+      dy *= f;
+
+      var min = 0.015;
+      if (Math.abs(dx) < min) {
+        dx = min*this.direction * this.motionWhenRelease;
+        this.dx = dx;
+      }
+    } else {
+      this.dx = 0;
+      this.dy = 0;
+    }
+
+    return {x: dx, y: dy};
   },
 
   disableAutomaticMotion: function (duration) {

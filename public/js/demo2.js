@@ -22,15 +22,24 @@
  *
  */
 
-var Fullscreen = false;
-var LandColor = [ 0.1450980392156863,0.43529411764705883,0.5176470588235295,1];
-var LandFrontColor = [0.21568627450980393,0.6470588235294118,0.7647058823529411,0.8666666666666667];
-var CountryColor = [0.2,0.2,0.2,1];
-var HeightColor = [0.21568627450980393,0.6470588235294118,0.7647058823529411,0.8666666666666667];
-HeightColor = [1.0,0,0,1.0];
-HeightColor = [0.4588235294117647,0.8509803921568627,0.9725490196078431,1];
-var Debug = false;
+/* land back color */
+/* land top color */
+/* country border color */
+/* pulse color */
 
+/*var LandColor = [0.90625,0.46484375,0.1328125,1];*/
+/*var LandFrontColor = [0.21568627450980393,0.6470588235294118,0.7647058823529411,0.8666666666666667];*/
+/*var CountryColor = [0.2,0.2,0.2,1];*/
+/*var HeightColor = [0.21568627450980393,0.6470588235294118,0.7647058823529411,0.8666666666666667];*/
+
+var Fullscreen = false;
+
+var LandColor = [0.38671875,0.3984375,0.4140625,1];
+var LandFrontColor = [0.90625,0.46484375,0.1328125,1];
+var CountryColor = [0.2,0.2,0.2,1];
+var HeightColor = [0,0.328125,0.62109375,1];
+
+var Debug = false;
 var TextureGenerateStamp = 0;
 var WaveGenerator;
 
@@ -690,7 +699,6 @@ function displayYouAreHere(lat, lng, img)
 
 
 
-
 function UpdateHeightMap() {
     this.rate = 1.0/30.0; // update per second
 };
@@ -708,7 +716,7 @@ UpdateHeightMap.prototype = {
         return this.canvas;
     },
     update: function(node, nv) {
-        var scale = Viewer.getManipulator().scale*25.0;
+        var scale = Viewer.getManipulator().scale*100.0;
         this.scale.set([scale]);
         //osg.log("scale " + scale);
         if (WaveGenerator !== undefined) {
