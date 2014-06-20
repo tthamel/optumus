@@ -493,6 +493,18 @@ span.dismiss img {
 	margin-right:5px;
 }
 
+#live-data {
+  position:absolute;
+  left: 101;
+  z-index: 200;
+  font-family:'CartoGothicStd-Book', Helvetica, arial, sans-serif;
+  width:170px;
+  padding:20px;
+  height:275px;
+  color:#ccc;
+  bottom:-195px;
+}
+
 /* Credits */
 
 #credits {

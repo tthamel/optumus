@@ -114,7 +114,7 @@ function displayTweetPictureToCanvas ( image, texture) {
     var textureSizeY = twitterRendering.height;
 
     var ctx = twitterRendering.getContext("2d");
-    
+
     var ratio = textureSizeX / image.width;
 
     ctx.save();

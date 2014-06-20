@@ -43,10 +43,9 @@ function createTextureText(str, texture)
 //    c.fillRect(0, 0, textureSizeX, textureSizeY);
 //    c.globalCompositeOperation = "source-over";
 
-    c.font = "25px CartoGothicStd-Bold";
+    c.font = "40px CartoGothicStd-Bold";
     var size = c.measureText(str).width;
-   
-    c.fillStyle = "rgba(255, 255, 255, 1.0)";
+    c.fillStyle = "rgba(240, 240, 240, 1.0)";
 	c.shadowOffsetX = 1;
 	c.shadowOffsetY = 1;
 	c.shadowBlur    = 1;

@@ -6,16 +6,13 @@
     'allergy',
     'allergies',
     'alzheimers',
-    'asthma',
     'asthma attack',
     'asthma medicine',
-    'blood',
     'blood pressure',
     'bloody sneezing',
     'brain cancer',
     'breast cancer',
     'cancer',
-    'chest',
     'chest pain',
     'chest pains',
     'cold coughing',
@@ -25,8 +22,6 @@
     'coughing',
     'cough',
     'dangerous allergy',
-    'deaths',
-    'death',
     'dementia',
     'fever',
     'flu',
@@ -34,8 +29,9 @@
     'headaches',
     'headache',
     'hearing loss',
-    'heart',
-    'heathcare costs',
+    'heart pain',
+    'heart attack',
+    'heathcare',
     'loud coughing',
     'night sweats',
     'pain',
@@ -43,13 +39,11 @@
     'PDSD',
     'powerful asthma medicine',
     'sharp pain',
-    'shortness',
     'sick feeling',
     'sinus',
     'sneezes',
     'sneezing',
     'sneeze',
-    'sore',
     'sore throat',
     'stress',
     'stuffy nose',
@@ -75,6 +69,7 @@
   var dbUtils = require('./db/utils')(mongoose);
   var routes = require('./routes/index');
   var routesApi = require('./routes/api')(dbUtils);
+  var request = require('request');
 
   var Twitter = require('node-twitter');
   var twitterStreamClient = new Twitter.StreamClient(
@@ -94,6 +89,9 @@
     console.log('connected');
 
     twitterStreamClient.on('tweet', function (tweet) {
+      SEARCH_KEYWORDS.forEach(function (keyword) {
+        if(tweet.text.indexOf(keyword) >= 0) tweet.keyword = keyword;
+      });
       io.sockets.emit('tweet', tweet);
     });
   });
@@ -111,6 +109,10 @@
   app.use(bodyParser.urlencoded());
   app.use(cookieParser());
   app.use(express.static(path.join(__dirname, 'public')));
+
+  app.get('/profile_images/:id/:photo', function(req, res) {
+    request('http://pbs.twimg.com/profile_images/' + req.params.id + '/'+ req.params.photo).pipe(res);
+  });
 
   // Routes
   app.use('/api', routesApi);
