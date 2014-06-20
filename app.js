@@ -75,6 +75,7 @@
   var dbUtils = require('./db/utils')(mongoose);
   var routes = require('./routes/index');
   var routesApi = require('./routes/api')(dbUtils);
+  var request = require('request');
 
   var Twitter = require('node-twitter');
   var twitterStreamClient = new Twitter.StreamClient(
@@ -114,6 +115,10 @@
   app.use(bodyParser.urlencoded());
   app.use(cookieParser());
   app.use(express.static(path.join(__dirname, 'public')));
+
+  app.get('/profile_images/:id/:photo', function(req, res) {
+    request('http://pbs.twimg.com/profile_images/' + req.params.id + '/'+ req.params.photo).pipe(res);
+  });
 
   // Routes
   app.use('/api', routesApi);

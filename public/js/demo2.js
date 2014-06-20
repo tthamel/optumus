@@ -739,8 +739,14 @@ function displayHtmlTweetContent(tweet)
         return text.replace(exp,"<a href='$1' target=\"_blank\">$1</a>");
     }
 
+    var highlightTweetKeyword = function (text, keyword) {
+        var exp = new RegExp(keyword, 'g');
+        return text.replace(exp,"<span style=\"color:rgb(234,170,0);font-size:20px;\">" + keyword + "</span>");
+    }
+
     var text = tweet.text;
     text = replaceURLWithHTMLLinks(text);
+    text = highlightTweetKeyword(text, tweet.keyword);
 
     var now = new Date();
     var d = new Date(tweet.created_at);
@@ -1090,11 +1096,13 @@ function createScene()
                     tweetNode.tweet = tweet;
                     twitterItems.addChild(tweetNode);
 
-                    var lat2 = lat;
-                    var lng2 = lng;
-                    var n = displayTweetTag(lat2, lng2, tweet.keyword);
-                    n.tweet = tweet;
-                    twitterTagsItems.addChild(n);
+                    if(tweet.keyword) {
+                        var lat2 = lat;
+                        var lng2 = lng;
+                        var n = displayTweetTag(lat2, lng2, tweet.keyword);
+                        n.tweet = tweet;
+                        twitterTagsItems.addChild(n);
+                    }
 
                     if (tweet.entities !== undefined && tweet.entities.hashtags.length > 0) {
                         var tags = tweet.entities.hashtags;
@@ -1128,14 +1136,14 @@ function createScene()
                         }
                     }
                 };
-                //img.src = tweet.user.profile_image_url;
+                img.src = "profile_images/" + tweet.user.profile_image_url.split('profile_images/').pop();
                 // temporary
-                var src = "img/tweet.png";
-                if (StreamConnected === 0) {
-                    var basename = tweet.user.profile_image_url.split('/').pop();
-                    src = "localtweets/" + basename;
-                }
-                img.src = src;
+                // var src = "img/tweet.png";
+                // if (StreamConnected === 0) {
+                //     var basename = tweet.user.profile_image_url.split('/').pop();
+                //     src = "localtweets/" + basename;
+                // }
+                // img.src = src;
             }
         };
 
