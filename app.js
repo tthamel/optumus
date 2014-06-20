@@ -3,6 +3,9 @@
 
   var SEARCH_KEYWORDS = [
     'hospital',
+    'uhg',
+    'uhc',
+    'heart',
     'pharma',
     'healthy',
     'medicare',
