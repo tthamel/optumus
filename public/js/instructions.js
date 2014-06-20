@@ -28,20 +28,8 @@ var initializeInstructions = function(canvas, scene)
     jQuery('#location-instructions').hide();
     showInstructions = function() {
 
-        setTimeout(function() {
-	    jQuery('#demo-instructions').removeClass('hidden');
-        },3000);
-
         jQuery('#demo-instructions span.dismiss').click(function() {
-	    jQuery('#demo-instructions').addClass('hidden');
-	    
-	    setTimeout(function(){
-	        jQuery('#demo-instructions').remove();
-
-	        setTimeout(function(){
-		    jQuery('#ranking-instructions').removeClass('hidden');
-	        },1000);
-	    },1000);		
+	        jQuery('#demo-instructions').addClass('hidden');
         });
 
         jQuery('#ranking-instructions span.dismiss').click(function() {
