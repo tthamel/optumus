@@ -14,6 +14,8 @@ jQuery(document).ready(function() {
     addCampaign();
   });
 
+  hideUi();
+
 });
 
 function addCampaign(){
@@ -34,4 +36,26 @@ function addCampaign(){
 
   jQuery('#demo-instructions').addClass('hidden');
   jQuery('#inputCampaignCriteria').val("");
+}
+
+var uiElements = [
+  'countries',
+  'stats',
+  'live-data',
+  'credits',
+  'instructions',
+  'demo-instructions',
+  'campaign-menu'
+];
+
+function showUi(){
+  for (var i = 0, l = uiElements.length; i < l; i++){
+    $("#" + uiElements[i]).show("slow", function(){});
+  }
+}
+
+function hideUi(){
+  for (var i = 0, l = uiElements.length; i < l; i++){
+    $("#" + uiElements[i]).hide("slow", function(){});
+  }
 }

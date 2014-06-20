@@ -22,7 +22,7 @@ function checkTwoHandedGesture(frame){
   var hands = frame.hands;
 
   if (hands.length === 2){
-    var threshold = 200;
+    var threshold = 100;
     var leftVelocity = hands[0].palmVelocity[0];
     var rightVelocity = hands[1].palmVelocity[0];
 
@@ -32,27 +32,5 @@ function checkTwoHandedGesture(frame){
     else if (leftVelocity > threshold && rightVelocity < threshold){
       showUi();
     }
-  }
-}
-
-var uiElements = [
-  'countries',
-  'stats',
-  'live-data',
-  'credits',
-  'instructions',
-  'demo-instructions',
-  'campaign-menu'
-];
-
-function showUi(){
-  for (var i = 0, l = uiElements.length; i < l; i++){
-    $("#" + uiElements[i]).show("slow", function(){});
-  }
-}
-
-function hideUi(){
-  for (var i = 0, l = uiElements.length; i < l; i++){
-    $("#" + uiElements[i]).hide("slow", function(){});
   }
 }
