@@ -144,6 +144,43 @@
     </li>
 </ul>
 
+<!-- Campaign form modal -->
+<div id="demo-instructions" class="hidden">
+    <div class="bubble">
+        <span>New Campaign</span>
+        <form>
+          <label>Campaign Name</label>
+          &nbsp; &nbsp; <input type="text" name="campaign">
+<br>
+          <label>Campaign Criteria</label>
+          &nbsp;  <input type="text" name="criteria">
+<br>
+          <label>Data Source Input</label>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <br>
+        <input type="checkbox" name="social" value="facebook">Facebook
+      <br>
+        <input type="checkbox" name="social" value="twitter">Twitter
+      <br>
+        <input type="checkbox" name="marketing" value="email">Email Campaign
+      <br>
+        <input type="checkbox" name="news" value="rss">RSS 
+      <br>
+<label> Start Campaign </label>
+&nbsp; &nbsp; <input id="startdate" name="startdate" min="2014-01-01" max="2100-01-01" type="date">
+<br>
+<label> Finish Campaign </label>
+&nbsp; <input id="enddate" name="enddate" min="2014-01-01" max="2100-01-01" type="date">
+
+        </form>
+        <div id="campaignForm" class="cartoBold">
+            Launch New Campaign
+        </div>
+        <span id="location-instructions"></span>
+        <span class="dismiss blue"><img src="img/dismiss.png" alt="dismiss">close menu</span>
+    </div>
+</div>
+
 <div id="instructions">
     <div id="ranking-instructions" class="hidden">
         <div class="corner">
