@@ -21,7 +21,8 @@
     "socket.io": "^1.0.5",
     "static-favicon": "~1.0.0",
     "request": "^2.36.0",
-    "say": "^0.5.0"
+    "say": "^0.5.0",
+    "lodash": "^2.4.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

@@ -55,6 +55,8 @@ osgGA.OrbitManipulator2 = function () {
   this.contacts = [];
   this.contactsPosition = [];
   this.zoomModeUsed = false;
+
+  this.autoRotateDelay = 10.0;
 };
 
 osgGA.OrbitManipulator2.prototype = {
@@ -121,7 +123,7 @@ osgGA.OrbitManipulator2.prototype = {
     this.goToLocationTime = (new Date()).getTime();
     this.goToLocationRunning = true;
 
-    this.disableAutomaticMotion(4.0);
+    this.disableAutomaticMotion();
   },
 
   update: function (dx, dy) {
@@ -182,6 +184,8 @@ osgGA.OrbitManipulator2.prototype = {
           x = -direction[0] * speed;
           y = direction[2] * speed;
 
+          this.disableAutomaticMotion();
+
           return {x: x, y: y};
         }
       }
@@ -219,7 +223,7 @@ osgGA.OrbitManipulator2.prototype = {
     return {x: dx, y: dy};
   },
 
-  disableAutomaticMotion: function (duration) {
+  disableAutomaticMotion: function () {
     var min = 0.015;
     this.motionWhenRelease = 0.0;
     if (this.timeout === undefined) {
@@ -231,7 +235,7 @@ osgGA.OrbitManipulator2.prototype = {
           that.update(min + 0.0001, 0);
         }
         delete that.timeout;
-      }, duration * 1000);
+      }, this.autoRotateDelay * 1000);
     }
   },
 
@@ -242,7 +246,7 @@ osgGA.OrbitManipulator2.prototype = {
     if (time - this.lastMotion > 0.05) {
       this.dx = 0;
       this.dy = 0;
-      this.disableAutomaticMotion(4.0);
+      this.disableAutomaticMotion();
     } else {
       this.dx = this.lastDeltaX;
       this.dy = this.lastDeltaY;

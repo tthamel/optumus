@@ -35,6 +35,7 @@
     <script type="text/javascript" src="js/wave.js"></script>
     <script type="text/javascript" src="js/coordinate.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/ui.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/instructions.js"></script>
     <style>
@@ -118,7 +119,7 @@
 
 <div id="campaign-menu">
     <form>
-        <ul>
+        <ul id="campaignList">
             <li>
                 <input type="text" placeholder="Live Search" class="live-search" />
                 <div class="orange-button small-button">&gt;</div>
@@ -128,8 +129,10 @@
             <li><div class="campaign">#Healthcare<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
             <li><div class="campaign">Asthma<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
             <li><div class="campaign">#StopSmoking<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
-            <li><div id="addCampaign" class="orange-button cartoBold">Create Campaign</div></li>
         </ul>
+
+        <li><div id="addCampaign" class="orange-button cartoBold">Create Campaign</div></li>
+
     </form>
 </div>
 
@@ -161,11 +164,11 @@
                 <li>
                     <hr />
                     <label>Campaign Name</label>
-                    <input type="text" name="campaign" class="form-right">
+                    <input type="text" name="campaign" class="form-right" id="inputCampaignName">
                 </li>
                 <li>
                     <label>Campaign Criteria</label>
-                    <input type="text" name="criteria" class="form-right">
+                    <input type="text" name="criteria" class="form-right" id="inputCampaignCriteria">
                     <hr />
                 </li>
                 <li>
