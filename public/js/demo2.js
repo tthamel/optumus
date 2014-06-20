@@ -1213,4 +1213,9 @@ jQuery(document).ready(function () {
           data: { keyword: jQuery(this).text() }
         });
     });
+
+  jQuery(".close-x").click(function (e) {
+    e.stopPropagation();
+    jQuery(this).parent().remove();
+  });
 });

@@ -130,7 +130,7 @@
 
 <div id="campaign-menu">
     <form>
-        <ul>
+        <ul id="campaignList">
             <li>
                 <input type="text" placeholder="Live Search" class="live-search" />
                 <button>&gt;</button>
@@ -140,8 +140,10 @@
             <li><div class="campaign">#Healthcare<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
             <li><div class="campaign">Asthma<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
             <li><div class="campaign">#StopSmoking<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
-            <li><div id="addCampaign" class="orange-button cartoBold">Create Campaign</div></li>
         </ul>
+
+        <li><div id="addCampaign" class="orange-button cartoBold">Create Campaign</div></li>
+
     </form>
 </div>
 
@@ -170,10 +172,10 @@
         <span>New Campaign</span>
         <form>
           <label>Campaign Name</label>
-          &nbsp; &nbsp; <input type="text" name="campaign">
+          &nbsp; &nbsp; <input type="text" name="campaign" id="inputCampaignName">
 <br>
           <label>Campaign Criteria</label>
-          &nbsp;  <input type="text" name="criteria">
+          &nbsp;  <input type="text" name="criteria" id="inputCampaignCriteria">
 <br>
           <label>Data Source Input</label>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

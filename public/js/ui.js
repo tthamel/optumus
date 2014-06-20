@@ -10,5 +10,28 @@ jQuery(document).ready(function() {
     jQuery('#demo-instructions').removeClass('hidden');
   });
 
+  jQuery("#campaignForm").click(function(){
+    addCampaign();
+  });
+
 });
 
+function addCampaign(){
+  var critera = jQuery('#inputCampaignCriteria').val();
+  var htmlString = jQuery('<li><div class="campaign">' + critera + '<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>').appendTo("#campaignList");
+  htmlString.click(function () {
+    jQuery.ajax({
+      type: 'POST',
+      url: '/tweet-spam',
+      data: { keyword: jQuery(this).text() }
+    });
+  });
+
+  jQuery(".close-x", htmlString).click(function(e) {
+    e.stopPropagation();
+    jQuery(this).parent().remove();
+  });
+
+  jQuery('#demo-instructions').addClass('hidden');
+  jQuery('#inputCampaignCriteria').val("");
+}
