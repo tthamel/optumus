@@ -40,7 +40,9 @@ var uiElements = [
   'stats',
   'live-data',
   'credits',
-  'instructions'
+  'instructions',
+  'demo-instructions',
+  'campaign-menu'
 ];
 
 function showUi(){
