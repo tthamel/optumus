@@ -126,22 +126,39 @@
     </li>
 </ul>
 
+<div id="campaign-menu">
+    <form>
+        <ul>
+            <li>
+                <input type="text" placeholder="Live Search" class="live-search" />
+                <button>&gt;</button>
+            </li>
+            <li><div class="campaign">Heart Disease<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
+            <li><div class="campaign">Optum<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
+            <li><div class="campaign">#Healthcare<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
+            <li><div class="campaign">Asthma<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
+            <li><div class="campaign">#StopSmoking<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
+            <li><div id="addCampaign" class="orange-button cartoBold">Create Campaign</div></li>
+        </ul>
+    </form>
+</div>
+
 <ul id="stats">
     <li>
         <span id="generalTweetCount" class="cartoBold">0</span>
-        TWEETS SENT
+        <br />TWEETS SENT
     </li>
     <li>
         <span id="generalCountriesCount" class="cartoBold">0</span>
-        ACTIVE COUNTRIES
+        <br />ACTIVE COUNTRIES
     </li>
     <li>
         <span id="generalTimer" class="cartoBold">0</span>
-        ELAPSED TIME
+        <br />ELAPSED TIME
     </li>
     <li>
         <span id="tweetsPersecond" class="cartoBold">0</span>
-        TWEETS/SEC
+        <br />TWEETS/SEC
     </li>
 </ul>
 
@@ -174,7 +191,7 @@
 &nbsp; <input id="enddate" name="enddate" min="2014-01-01" max="2100-01-01" type="date">
 
         </form>
-        <div id="campaignForm" class="cartoBold">
+        <div id="campaignForm" class="cartoBold orange-button">
             Launch New Campaign
         </div>
         <span id="location-instructions"></span>
@@ -200,7 +217,7 @@
 </div>
 
 <section id="live-data" class="bubble">
-    <canvas id="smoothie-chart" width="150" height="62"></canvas>
+    <canvas id="smoothie-chart" width="300" height="62"></canvas>
 </section>
 
 <section id="credits" class="bubble">
