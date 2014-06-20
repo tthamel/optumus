@@ -60,7 +60,6 @@ osgGA.OrbitManipulator2 = function () {
     enableGestures: true,
     frameEventName: 'animationFrame'
   });
-  this.firstValidFrame = null;
 
   this.leapController.connect();
 };
@@ -151,46 +150,53 @@ osgGA.OrbitManipulator2.prototype = {
     return true;
   },
   updateWithDelay: function () {
+    var speed = 0.01;
+    var x = 0.0;
+    var y = 0.0;
+
     var frame = this.leapController.frame();
-    if (frame.valid){
-      if (!this.firstValidFrame){
-        this.firstValidFrame = frame;
+    if (frame.valid && frame.hands.length > 0){
+      var hand = frame.hands[0];
+      var fingerCount = hand.fingers.length;
+
+      if (fingerCount > 2){
+        var direction = frame.hands[0].palmVelocity;
+
+        x = -direction[0] * speed;
+        y = direction[2] * speed;
       }
 
-      var t = this.firstValidFrame.translation(frame);
-      this.dx = t[0];
-      this.dy = t[1];
     }
 
-    var f = 1.0;
-    var dt;
-    var max = 2.0;
-    var dx = this.dx;
-    var dy = this.dy;
-    if (this.buttonup) {
-      f = 0.0;
-      dt = ((new Date()).getTime() - this.time) / 1000.0;
-      if (dt < max) {
-        f = 1.0 - osgAnimation.EaseOutQuad(dt / max);
-      }
-      dx *= f;
-      dy *= f;
+    // var f = 1.0;
+    // var dt;
+    // var max = 2.0;
+    // var dx = this.dx;
+    // var dy = this.dy;
+    // if (this.buttonup) {
+    //   f = 0.0;
+    //   dt = ((new Date()).getTime() - this.time) / 1000.0;
+    //   if (dt < max) {
+    //     f = 1.0 - osgAnimation.EaseOutQuad(dt / max);
+    //   }
+    //   dx *= f;
+    //   dy *= f;
+    //
+    //   var min = 0.015;
+    //   if (Math.abs(dx) < min) {
+    //     dx = min * this.direction * this.motionWhenRelease;
+    //     this.dx = dx;
+    //   }
+    //
+    //   var val = Math.abs(this.dx) + Math.abs(this.dy);
+    //
+    // } else {
+    //   this.dx = 0;
+    //   this.dy = 0;
+    // }
 
-      var min = 0.015;
-      if (Math.abs(dx) < min) {
-        dx = min * this.direction * this.motionWhenRelease;
-        this.dx = dx;
-      }
-
-      var val = Math.abs(this.dx) + Math.abs(this.dy);
-
-    } else {
-      this.dx = 0;
-      this.dy = 0;
-    }
-
-    if (Math.abs(dx) + Math.abs(dy) > 0.0) {
-      this.computeRotation(dx, dy);
+    if (Math.abs(x) + Math.abs(y) > 0.0) {
+      this.computeRotation(x, y);
     }
   },
 
@@ -516,4 +522,3 @@ osgGA.OrbitManipulator2.prototype = {
   }
 
 };
-
