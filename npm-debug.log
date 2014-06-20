@@ -1,7 +1,7 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
-2 info using npm@1.4.14
-3 info using node@v0.10.29
+2 info using npm@1.4.3
+3 info using node@v0.10.26
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info prestart optumus-prime-hackathon@0.0.1
 6 info start optumus-prime-hackathon@0.0.1
@@ -19,8 +19,8 @@
 10 error There is likely additional logging output above.
 11 error System Darwin 13.2.0
 12 error command "node" "/usr/local/bin/npm" "start"
-13 error cwd /Users/jbanks/Desktop/hackathon/hackathon-2014
-14 error node -v v0.10.29
-15 error npm -v 1.4.14
+13 error cwd /Users/hollow/Documents/Projects/hackathon-2014
+14 error node -v v0.10.26
+15 error npm -v 1.4.3
 16 error code ELIFECYCLE
 17 verbose exit [ 1, true ]

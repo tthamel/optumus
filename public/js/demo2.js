@@ -46,7 +46,7 @@ function hex2num(hex) {
     var int1,int2;
     for(var i=0;i<8;i+=2) {
 	int1 = hex_alphabets.indexOf(hex.charAt(i));
-	int2 = hex_alphabets.indexOf(hex.charAt(i+1)); 
+	int2 = hex_alphabets.indexOf(hex.charAt(i+1));
 	value[k] = (int1 * 16) + int2;
         value[k] = value[k]/255.0;
 	k++;
@@ -63,7 +63,7 @@ function num2hex(triplet) {
         var v = triplet[i] * 255.0;
 	int1 = v / 16;
 	int2 = v % 16;
-	hex += hex_alphabets.charAt(int1) + hex_alphabets.charAt(int2); 
+	hex += hex_alphabets.charAt(int1) + hex_alphabets.charAt(int2);
     }
     return(hex);
 }
@@ -191,7 +191,7 @@ function getCountryShader()
         osg.log("country color changed to " + newval);
         uniform.set(newval);
     });
-    
+
     return stateset;
 }
 
@@ -258,7 +258,7 @@ function getHeightShaderVolume()
         osg.log("height color changed to " + newval);
         uniform.set(newval);
     });
-    
+
     return stateset;
 }
 
@@ -327,7 +327,7 @@ function getHeightShaderFlat()
         osg.log("height color changed to " + newval);
         uniform.set(newval);
     });
-    
+
     return stateset;
 }
 
@@ -417,7 +417,7 @@ function TweetDisplayCallback() {
 }
 
 TweetDisplayCallback.prototype = {
-    
+
     update: function(node, nv) {
         var ratio = 0;
         var currentTime = nv.getFrameStamp().getSimulationTime();
@@ -553,7 +553,7 @@ function cleanExpiredTweets(scene)
             RecycleTweets.push(item);
         else if (item.itemType === "tag")
             RecycleTweetsTags.push(item);
-            
+
         scene.removeChild(item);
     }
 }
@@ -728,7 +728,7 @@ function displayHtmlTweetContent(tweet)
 {
     var replaceURLWithHTMLLinks = function (text) {
         var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-        return text.replace(exp,"<a href='$1' target=\"_blank\">$1</a>"); 
+        return text.replace(exp,"<a href='$1' target=\"_blank\">$1</a>");
     }
 
     var text = tweet.text;
@@ -750,8 +750,9 @@ function displayHtmlTweetContent(tweet)
         //osg.log("minutes " + minutes);
     }
 //    osg.log("secs " + secs);
-    
-    jQuery("#TweetContent").html("<img id=\"closeTweet\" src=\"img/close.png\" alt=\"close\"><a href=\"http://twitter.com/" + tweet.user.screen_name + "\" target=\"_blank\"><img src=\"" + tweet.user.profile_image_url + "\" alt=\"\"></a>" + "<a href=\"http://twitter.com/" + tweet.user.screen_name +  "\" target=\"_blank\"><span id=\"username\">" + tweet.user.screen_name + " </span></a> <p>" + text + "</p> <span id=\"date\">" + msg + "</span>" );
+
+    jQuery("#TweetContent").html("<img id=\"closeTweet\" src=\"img/close.png\" alt=\"close\"><a href=\"http://twitter.com/" + tweet.user.screen_name + "\" target=\"_blank\"><img src=\"" + tweet.user.profile_image_url + "\" alt=\"\"></a>" + "<a href=\"http://twitter.com/" + tweet.user.screen_name +  "\" target=\"_blank\"><span id=\"username\">"
+      + tweet.user.screen_name + " </span></a> <p>" + text + "</p> <span id=\"date\">" + msg + "</span>" );
     jQuery("#TweetContent").removeClass('hidden');
     jQuery("img#closeTweet").click(function() {
         jQuery("#TweetContent").addClass('hidden');
@@ -928,10 +929,10 @@ function createScene()
                     osg.log("Can't find country for " + name);
                 }
                 array[i].country = countryCode;
-				
+
 		var index = i + 1;
 		var li = jQuery("#countries li:nth-child("+index.toString()+")");
-				
+
                 if (currentRank === undefined || i >= (currentRank.length)) {
                     li.find("div").addClass("flag-" + array[i].flag);
                     li.find("span.countryName").html(array[i].country);
@@ -982,7 +983,7 @@ function createScene()
             jQuery("#tagsStats").html(text);
         }
     };
-    
+
     var updateTweetsStats = function(data) {
         jQuery("#generalTweetCount").html(data);
     };
@@ -1081,6 +1082,12 @@ function createScene()
                     tweetNode.tweet = tweet;
                     twitterItems.addChild(tweetNode);
 
+                    var lat2 = lat;
+                    var lng2 = lng;
+                    var n = displayTweetTag(lat2, lng2, tweet.keyword);
+                    n.tweet = tweet;
+                    twitterTagsItems.addChild(n);
+
                     if (tweet.entities !== undefined && tweet.entities.hashtags.length > 0) {
                         var tags = tweet.entities.hashtags;
                         var existingTag = {};
@@ -1104,11 +1111,11 @@ function createScene()
                                 //var angle = 4.0 * scale * 10.0;
                                 //var lat2 = lat - tags.length*angle/2.0 + i*angle;
                                 //var lng2 = lng - range/2.0 + Math.random()*range;
-                                var lat2 = lat;
-                                var lng2 = lng;
-                                var n = displayTweetTag(lat2, lng2, "#" +hash.text);
-                                n.tweet = tweet;
-                                twitterTagsItems.addChild(n);
+                                // var lat2 = lat;
+                                // var lng2 = lng;
+                                // var n = displayTweetTag(lat2, lng2, "#" +hash.text);
+                                // n.tweet = tweet;
+                                // twitterTagsItems.addChild(n);
                             }
                         }
                     }
@@ -1142,7 +1149,7 @@ function createScene()
             lng=center[0];
             displayTweet({ 'lat' : lat, 'lng' : lng }, tweet);
         } else {
-            getLatLongFromLocation(tweet, displayTweet);
+            //getLatLongFromLocation(tweet, displayTweet);
         }
 
     };

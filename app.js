@@ -94,6 +94,9 @@
     console.log('connected');
 
     twitterStreamClient.on('tweet', function (tweet) {
+      SEARCH_KEYWORDS.forEach(function (keyword) {
+        if(tweet.text.indexOf(keyword) >= 0) tweet.keyword = keyword;
+      });
       io.sockets.emit('tweet', tweet);
     });
   });
