@@ -61,10 +61,12 @@ a:hover {
 	left:0;
 	top:0;
 	width:100%;
-	background: rgba(0,0,0,0.75);
-	border-bottom:1px solid #666;
+	/*background: rgba(0,0,0,0.75);*/
+	/*background-color: #D0D0CE;*/
+	background: rgba(208,208,208,.5);
+	border-bottom:1px solid #888;
 	height:64px;
-	box-shadow:0px 0px 10px #000;
+	box-shadow:0px 0px 10px #ccc;
 	z-index:10;
 }
 
@@ -110,15 +112,20 @@ h1 span:nth-child(2) {
 }
 
 #pitch {
-	position:absolute;
-	top:0;
-	left:50%;
-	margin-left:-300px;
-	width:600px;
-	line-height:64px;
+	/*background-color: #D0D0CE;*/
+	position: absolute;
+	/*top:0;*/
+	/*left:50%;*/
+	/*margin-left:-300px;*/
+	/*width:600px;*/
+	/*line-height:64px;*/
 	text-align:center;
 	color:#eee;
-	font-size:18px;
+	/*font-size:18px;*/
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 200px;
 }
 
 #generalCounter {
@@ -210,7 +217,7 @@ h1 span:nth-child(2) {
 	padding-top:10px;
 	font-size:18px;
 	padding-left:68px;
-	font-family:'CartoGothicStd-Book', Helvetica, arial, sans-serif;	
+	font-family:'CartoGothicStd-Book', Helvetica, arial, sans-serif;
 }
 
 #TweetContent #date {
@@ -233,31 +240,35 @@ h1 span:nth-child(2) {
 	border-radius:8px;
 	moz-border-radius:8px;
 	webkit-border-radius:8px;
-	o-border-radius:8px;			
+	o-border-radius:8px;
 	padding:10px 0;
 	list-style-type:none;
 	color:#ddd;
-	width:87px;
+	width: 200px;
 	z-index:10;
 	box-shadow:0px 0px 10px #000;
 }
 
+#countries .countries--header {
+	text-align: center;
+}
+
 #countries li {
-	padding:8px 15px;
+	padding:8px 35px;
 	margin-left:5px;
 	position:relative;
 	top:0px;
 	-moz-transition:0.2s all ease;
 	-webkit-transition:0.2s all ease;
 	-o-transition:0.2s all ease;
-	transition:0.2s all ease;			
+	transition:0.2s all ease;
 }
 
 #countries li:hover {
 	cursor:pointer;
 	background:rgba(255,255,255,0.3);
 	color:#fff;
-	padding-left:20px;
+	padding-left:50px;
 }
 
 #countries li:first-child {
@@ -474,13 +485,13 @@ span.dismiss img {
 	font-family:'CartoGothicStd-Book', Helvetica, arial, sans-serif;
 	width:170px;
 	padding:20px;
-	height:260px;
+	height:200px;
 	color:#ccc;
-	bottom:-255px;
+	bottom:-195px;
 	-moz-transition:0.5s all ease;
-	-webkit-transition:0.5s all ease;	
-	-o-transition:0.5s all ease;	
-	transition:0.5s all ease;	
+	-webkit-transition:0.5s all ease;
+	-o-transition:0.5s all ease;
+	transition:0.5s all ease;
 }
 
 #credits.bubble {
@@ -537,30 +548,15 @@ span.dismiss img {
 }
 
 #credits ul li {
-	margin:20px 0;
+	margin:10px 0;
 	text-align:left;
 }
 
-#credits ul li span:nth-child(1) {
-	font-size:12px;
-	display:block;
-	color:#ccc;
-}
-
-#credits ul li span:nth-child(2) {
+#credits ul li span {
 	font-size:16px;
 	margin:3px 0;
 	display:block;
 	color:#eee;
-}
-
-#credits ul li span:nth-child(3) {
-	font-size:12px;
-	display:block;
-}
-
-#credits a:hover {
-	color:#c7efff;
 }
 
 /* Stats */
@@ -1579,3 +1575,17 @@ ul#stats li:nth-child(4) {
 	background-position: -16px -165px;
 }
 
+
+
+
+/* hack overrides */
+
+#logo,
+#sharing {
+	display: none;
+}
+
+#pitch img {
+	margin: 8px 0 7px;
+	max-height: 45px;
+}
