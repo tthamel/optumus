@@ -44,13 +44,13 @@ function addCampaign(){
 }
 
 var uiElements = [
-  'countries',
-  'stats',
-  'live-data',
-  'credits',
-  'instructions',
-  'demo-instructions',
-  'campaign-menu'
+  // 'countries',
+  // 'stats',
+  // 'live-data',
+  // 'credits',
+  // 'instructions',
+  // 'demo-instructions',
+  // 'campaign-menu'
 ];
 
 function showUi(){
