@@ -1218,4 +1218,13 @@ jQuery(document).ready(function () {
     e.stopPropagation();
     jQuery(this).parent().remove();
   });
+
+  jQuery("#campaignSearch").submit(function (e) {
+    e.preventDefault();
+    jQuery.ajax({
+      type: 'POST',
+      url: '/tweet-spam',
+      data: { keyword: jQuery(".live-search", this).val() }
+    });
+  });
 });

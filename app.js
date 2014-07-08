@@ -163,7 +163,7 @@
   });
 
   app.post('/tweet-spam', function(req, res) {
-    trackKeywords([req.body.keyword]);
+    trackKeywords(req.body.keyword.split(','));
     res.send(200);
 
     // request({
