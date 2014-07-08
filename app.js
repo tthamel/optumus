@@ -102,13 +102,13 @@
   var say = require('say');
   var _ = require('lodash');
 
-  var Twitter = require('node-twitter');
-  var twitterStreamClient = new Twitter.StreamClient(
-    'NsCqa2yS6DpA3YQEZGOT2nBJq',
-    'KvcED4ctI3K8aIU8ldIU2zfiCx2IVUN0bJEX3BC28FYKHpQ1MD',
-    '454062066-Ks1gCApBuvl6dCmhjEzXHBcLKBR3eA0uvcaJMYWF',
-    'b8AJBVTt6bE5kdzQtZnuhwfFg53Wn4MBQszqeFvQmgun4'
-  );
+  var Twitter = require('node-tweet-stream');
+  var twitterStreamClient = new Twitter({
+    consumer_key: 'NsCqa2yS6DpA3YQEZGOT2nBJq',
+    consumer_secret: 'KvcED4ctI3K8aIU8ldIU2zfiCx2IVUN0bJEX3BC28FYKHpQ1MD',
+    token: '454062066-Ks1gCApBuvl6dCmhjEzXHBcLKBR3eA0uvcaJMYWF',
+    token_secret: 'b8AJBVTt6bE5kdzQtZnuhwfFg53Wn4MBQszqeFvQmgun4'
+  });
 
   var app = express();
   var http = require('http');
@@ -121,13 +121,25 @@
 
     twitterStreamClient.on('tweet', function (tweet) {
       SEARCH_KEYWORDS.forEach(function (keyword) {
-        if(tweet.text.indexOf(keyword) >= 0) tweet.keyword = keyword;
+        if(tweet.text.toLowerCase().indexOf(keyword) >= 0) tweet.keyword = keyword;
       });
       io.sockets.emit('tweet', tweet);
     });
   });
 
-  twitterStreamClient.start(SEARCH_KEYWORDS);
+  function trackKeywords(arr) {
+      _.each(SEARCH_KEYWORDS, function (keyword) {
+        twitterStreamClient.untrack(keyword);
+      });
+      SEARCH_KEYWORDS = arr;
+      _.each(arr, function (keyword) {
+        twitterStreamClient.track(keyword);
+      });
+  }
+
+  _.each(SEARCH_KEYWORDS, function (keyword) {
+    twitterStreamClient.track(keyword);
+  });
 
   // view engine setup
   app.set('views', path.join(__dirname, 'app'));
@@ -151,10 +163,9 @@
   });
 
   app.post('/tweet-spam', function(req, res) {
-    twitterStreamClient.destroy();
-    twitterStreamClient.start(req.body.keyword);
+    trackKeywords([req.body.keyword]);
     res.send(200);
-    
+
     // request({
     //   url: 'http://hackathon.hollow.io/',
     //   json: true,
