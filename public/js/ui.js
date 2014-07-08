@@ -14,7 +14,12 @@ jQuery(document).ready(function() {
     addCampaign();
   });
 
-  hideUi();
+  /*hideUi();*/
+  jQuery("#pitch").click(function(){
+    for (var i = 0, l = uiElements.length; i < l; i++){
+      $("#" + uiElements[i]).toggle("slow", function(){});
+    }
+  });
 
 });
 

@@ -136,7 +136,7 @@
     </form>
 </div>
 
-<ul id="stats">
+<!-- <ul id="stats">
     <li>
         <span id="generalTweetCount" class="cartoBold">0</span>
         <br />TWEETS SENT
@@ -153,7 +153,7 @@
         <span id="tweetsPersecond" class="cartoBold">0</span>
         <br />TWEETS/SEC
     </li>
-</ul>
+</ul> -->
 
 <!-- Campaign form modal -->
 <div id="demo-instructions" class="hidden">
@@ -204,27 +204,49 @@
     </div>
 </div>
 
+
 <div id="connection">
     <div class="bubble">
         Connecting to twitter stream
     </div>
 </div>
 
-<section id="live-data" class="bubble">
-    <canvas id="smoothie-chart" width="300" height="62"></canvas>
-</section>
-
-<section id="credits" class="bubble">
-    <header><span id="arrow"></span>Team</header>
-    <hr />
-    <ul id="authors">
-        <li><span>Trevor Hamel</span></li>
-        <li><span>John Hollow</span></li>
-        <li><span>Tim Mendenhall</span></li>
-        <li><span>David Przybylo</span></li>
-        <li><span>Jon Rigert</span></li>
+<div class="footer-wrapper">
+    <ul id="stats">
+        <li>
+            <span id="generalTweetCount" class="cartoBold">0</span>
+            <br />TWEETS SENT
+        </li>
+        <li>
+            <span id="generalCountriesCount" class="cartoBold">0</span>
+            <br />ACTIVE COUNTRIES
+        </li>
+        <li>
+            <span id="generalTimer" class="cartoBold">0</span>
+            <br />ELAPSED TIME
+        </li>
+        <li>
+            <span id="tweetsPersecond" class="cartoBold">0</span>
+            <br />TWEETS/SEC
+        </li>
     </ul>
-</section>
+
+    <section id="live-data" class="bubble">
+        <canvas id="smoothie-chart" width="300" height="62"></canvas>
+    </section>
+
+    <section id="credits" class="bubble">
+        <header><span id="arrow">Team</span></header>
+        <hr />
+        <ul id="authors">
+            <li><span>Trevor Hamel</span></li>
+            <li><span>John Hollow</span></li>
+            <li><span>Tim Mendenhall</span></li>
+            <li><span>David Przybylo</span></li>
+            <li><span>Jon Rigert</span></li>
+        </ul>
+    </section>
+</div>
 
 <div id="ViewContainer">
     <canvas id="3DView"></canvas>
