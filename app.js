@@ -151,23 +151,27 @@
   });
 
   app.post('/tweet-spam', function(req, res) {
-    request({
-      url: 'http://hackathon.hollow.io/',
-      json: true,
-      qs: {
-        term: req.body.keyword,
-        limit: 100
-      }
-    }, function (err, res, body) {
-        _.chain(sample_json).shuffle().first(_.random(50, 500)).each(function (tweet) {
-          var sample = _.sample(body.results);
-          tweet.text = (sample && sample.Contents) || tweet.text;
-          tweet.user.profile_image_url = "localtweets/" + tweet.user.profile_image_url.split('/').pop();
-          tweet.fake = true;
-          io.sockets.emit('tweet', tweet);
-        }).value();
-    });
+    twitterStreamClient.destroy();
+    twitterStreamClient.start(req.body.keyword);
     res.send(200);
+    
+    // request({
+    //   url: 'http://hackathon.hollow.io/',
+    //   json: true,
+    //   qs: {
+    //     term: req.body.keyword,
+    //     limit: 100
+    //   }
+    // }, function (err, res, body) {
+    //     _.chain(sample_json).shuffle().first(_.random(50, 500)).each(function (tweet) {
+    //       var sample = _.sample(body.results);
+    //       tweet.text = (sample && sample.Contents) || tweet.text;
+    //       tweet.user.profile_image_url = "localtweets/" + tweet.user.profile_image_url.split('/').pop();
+    //       tweet.fake = true;
+    //       io.sockets.emit('tweet', tweet);
+    //     }).value();
+    // });
+    // res.send(200);
   });
 
   // Routes
