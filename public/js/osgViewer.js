@@ -19,14 +19,31 @@
  */
 
 var osgViewer = {};
+var that = null;
+
+function onWindowResize(event){
+    if (!that) { return; }
+
+    var canvas = document.getElementsByName('3DView');
+    var size = getWindowSize();
+
+    canvas.width = size.w;
+    canvas.height = size.h;
+
+    var ratio = canvas.width / canvas.height;
+
+    that.view.setViewPort(new osg.Viewport(0, 0, canvas.width, canvas.height));
+    that.view.setProjectionMatrix(osg.Matrix.makePerspective(60, ratio, 1.0, 1000.0));
+}
 
 osgViewer.Viewer = function(canvas) {
+    that = this;
     gl = WebGLUtils.setupWebGL(canvas, {antialias : true} );
     if (gl) {
         this.gl = gl;
         osg.init();
         this.canvas = canvas;
-        this.frameRate = 60.0;
+        this.frameRate = 30.0;
         osgUtil.UpdateVisitor = osg.UpdateVisitor;
         osgUtil.CullVisitor = osg.CullVisitor;
         this.urlOptions = true;
@@ -74,6 +91,8 @@ osgViewer.Viewer.prototype = {
         if (this.urlOptions) {
             this.parseOptions();
         }
+
+        window.addEventListener('resize', onWindowResize, false);
     },
 
     parseOptions: function() {
