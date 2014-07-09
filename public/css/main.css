@@ -245,7 +245,7 @@ h1 span:nth-child(2) {
 	padding:10px 0;
 	list-style-type:none;
 	color:#ddd;
-	width: 200px;
+	width: 140px;
 	z-index:10;
 	box-shadow:0px 0px 10px #000;
 }
@@ -309,7 +309,7 @@ h1 span:nth-child(2) {
 /* Instructions boxes */
 /* Instructions boxes */
 #connection {
-        font-size: 20px;
+	font-size: 20px;
 	position:absolute;
 	z-index:5;
 	width:400px;
@@ -421,21 +421,6 @@ h1 span:nth-child(2) {
 	font-size:18px;
 }
 
-/*#campaignForm:hover {
-	margin:20px auto;
-	width:200px;
-	text-align:center;
-	padding:10px 5px;
-	background:yellow;
-	background: -moz-linear-gradient(top, #EAA514, #EAA514);
-	background: -webkit-gradient(linear, center top, center bottom, from(#EAA514), to(#EAA514));
-	border-radius:5px;
-	border-top:1px solid #353842;
-	color:#ffffff;
-	box-shadow:0px 3px 0px #353842;
-	font-size:18px;
-}*/
-
 #shareLocation:hover {
 	cursor:pointer;
 }
@@ -461,7 +446,6 @@ span#location-instructions {
 	position:absolute;
 	top:30%;
 	left:80px;
-/*	background:url('../img/corner.png') no-repeat center left; */
 	z-index:200;
 	-moz-transition:0.5s all ease;
 	-webkit-transition:0.5s all ease;
@@ -649,6 +633,10 @@ span.dismiss img {
 	padding: 0;
 }
 
+#campaign-menu ul li {
+	position: relative;
+}
+
 .live-search {
 	padding-left: 10px;
 }
@@ -656,15 +644,52 @@ span.dismiss img {
 .campaign {
 	cursor: pointer;
 	background-color: #888B8D;
-	box-shadow:0px 3px 0px #353842;
 	border-top:1px solid #353842;
 	padding:6px 30px 6px 16px;
 	border-radius:5px;
 	text-align:left;
 	color:#343741;
-	margin: 10px 0;
+	margin: 15px 0;
 	position: relative;
 }
+
+.campaign-bg {
+	background-color: #353842;
+	border-radius:5px;
+	position: absolute;
+	width: 200px;
+	height: 20px;
+	bottom: -4px;
+	left: 0;
+	z-index: -1;
+}
+
+.campaign .campaign-bg.active {
+	-webkit-animation-duration: 0.89s;
+	-webkit-animation-name: active;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-duration: 0.89s;
+	-moz-animation-name: active;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
+	animation-duration: 0.89s;
+	animation-name: active;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	color: transparent;
+	background: -webkit-linear-gradient(left, rgba(99,102,106,1) 0,rgba(177,179,179,1) 50%,rgba(208,208,208,1) 50%,rgba(177,179,179,1) 100%);
+	background:    -moz-linear-gradient(left, rgba(99,102,106,1) 0,rgba(177,179,179,1) 50%,rgba(208,208,208,1) 50%,rgba(177,179,179,1) 100%);
+	background:     -ms-linear-gradient(left, rgba(99,102,106,1) 0,rgba(177,179,179,1) 50%,rgba(208,208,208,1) 50%,rgba(177,179,179,1) 100%);
+	background:      -o-linear-gradient(left, rgba(99,102,106,1) 0,rgba(177,179,179,1) 50%,rgba(208,208,208,1) 50%,rgba(177,179,179,1) 100%);
+	/*background:        -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(208,208,206,1)), color-stop(50%, rgba(177,179,179,1)), color-stop(50%, rgba(232,119,34,1)), color-stop(100%, rgba(234,170,0,1)));*/
+	background-size: 10px 100%;
+}
+
+@keyframes active              { to { background-position: -10px 0; } }
+@-webkit-keyframes active      { to { background-position: -10px 0; } }
+@-moz-keyframes active         { to { background-position: -10px 0; } }
+@-o-keyframes active           { to { background-position: -10px 0; } }
 
 .close-x {
 	position: absolute;
@@ -672,12 +697,7 @@ span.dismiss img {
 	top: 11px;
 }
 
-/*li:nth-child(even) .campaign {
-	background-color: #B1B3B3;
-}*/
-
 #addCampaign {
-	/*width: 100%;*/
 	font-weight: bold;
 	font-size: 18px;
 }
@@ -1721,39 +1741,32 @@ ul#stats li:nth-child(4) {
 	width: 100%;
 	text-align: center;
 	height: 100px;
-
-	/*overflow: hidden;*/
-	/*white-space: nowrap;
-	letter-spacing: 35px;*/
 }
 
 ul#stats,
 #live-data,
 #credits {
 	position: relative;
-	bottom: auto;
+	/*bottom: auto;*/
 	height: auto;
 	left: auto;
 	right: auto;
 	display: inline-block;
 	margin: -80px auto -8px;
-	/*margin-top: -80px;
-	margin-bottom: -8px;*/
 	text-align: left;
 	vertical-align: middle;
-	/*letter-spacing: normal;*/
-	/*margin-top: 0;*/
 }
 
-#credits #arrow {
-
+ul#stats,
+#live-data {
+	bottom: auto;
 }
 
 ul#stats li {
 	margin-bottom: 20px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1230px) {
 	#credits {
 		display: none;
 	}
@@ -1763,13 +1776,21 @@ ul#stats li {
 	}
 }
 
-/*190*/
+@media (max-width: 870px) {
+	ul#stats {
+		display: none;
+	}
+}
 
 #credits.visible {
-	bottom: auto;
-	top: -80px;
+	bottom: 80px;
 }
 
 #credits {
 	bottom: -80px;
+	margin-left: 40px;
+}
+
+ul#stats {
+	margin-right: 40px;
 }

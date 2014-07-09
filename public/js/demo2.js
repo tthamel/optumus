@@ -1227,4 +1227,18 @@ jQuery(document).ready(function () {
       data: { keyword: jQuery(".live-search", this).val() }
     });
   });
+
+  jQuery("#live-search-button").click(function (e) {
+    e.preventDefault();
+    jQuery.ajax({
+      type: 'POST',
+      url: '/tweet-spam',
+      data: { keyword: jQuery(".live-search", "#campaignSearch").val() }
+    });
+  });
+
+    jQuery(".campaign").click(function(e){
+        jQuery(".campaign .campaign-bg").removeClass("active");
+        jQuery(this).find(".campaign-bg").addClass("active");
+    });
 });

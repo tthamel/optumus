@@ -15,9 +15,11 @@ jQuery(document).ready(function() {
   });
 
   /*hideUi();*/
+
+  /* When you click the Optum logo, toggle the UI components. */
   jQuery("#pitch").click(function(){
     for (var i = 0, l = uiElements.length; i < l; i++){
-      $("#" + uiElements[i]).toggle("slow", function(){});
+      $("#" + uiElements[i]).toggle("fast", function(){});
     }
   });
 
@@ -25,7 +27,7 @@ jQuery(document).ready(function() {
 
 function addCampaign(){
   var critera = jQuery('#inputCampaignCriteria').val();
-  var htmlString = jQuery('<li><div class="campaign">' + critera + '<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>').appendTo("#campaignList");
+  var htmlString = jQuery('<li><div class="campaign">' + critera + '<img src="img/dismiss.png" alt="dismiss" class="close-x"><div class="campaign-bg"></div></div></li>').appendTo("#campaignList");
   htmlString.click(function () {
     jQuery.ajax({
       type: 'POST',
@@ -39,18 +41,23 @@ function addCampaign(){
     jQuery(this).parent().remove();
   });
 
+  jQuery(".campaign").click(function(e){
+    jQuery(".campaign .campaign-bg").removeClass("active");
+    jQuery(this).find(".campaign-bg").addClass("active");
+  });
+
   jQuery('#demo-instructions').addClass('hidden');
   jQuery('#inputCampaignCriteria').val("");
 }
 
 var uiElements = [
-  // 'countries',
-  // 'stats',
-  // 'live-data',
-  // 'credits',
-  // 'instructions',
-  // 'demo-instructions',
-  // 'campaign-menu'
+  'countries',
+  'stats',
+  'live-data',
+  'credits',
+  'instructions',
+  'demo-instructions',
+  'campaign-menu'
 ];
 
 function showUi(){

@@ -24,7 +24,7 @@ var that = null;
 function onWindowResize(event){
     if (!that) { return; }
 
-    var canvas = document.getElementsByName('3DView');
+    var canvas = document.getElementById('3DView');
     var size = getWindowSize();
 
     canvas.width = size.w;
@@ -32,7 +32,7 @@ function onWindowResize(event){
 
     var ratio = canvas.width / canvas.height;
 
-    that.view.setViewPort(new osg.Viewport(0, 0, canvas.width, canvas.height));
+    that.view.setViewport(new osg.Viewport(0, 0, canvas.width, canvas.height));
     that.view.setProjectionMatrix(osg.Matrix.makePerspective(60, ratio, 1.0, 1000.0));
 }
 

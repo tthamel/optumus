@@ -62,7 +62,6 @@
         var DisableWave = false;
     </script>
     <script type="text/javascript" src="js/state.js"></script>
-
 </head>
 
 <body>
@@ -74,7 +73,7 @@
 </header>
 
 <ul id="countries" class="cartoBook">
-    <p class="countries--header">Country Leaderboard</p>
+    <p class="countries--header">Countries</p>
     <li>
         <div class="flag"></div>
         <span class="countryName"></span>
@@ -122,38 +121,28 @@
         <ul id="campaignList">
             <li>
                 <input type="text" placeholder="Live Search" class="live-search" />
-                <div class="orange-button small-button">&gt;</div>
+                <div class="orange-button small-button" id="live-search-button">&gt;</div>
             </li>
-            <li><div class="campaign">Heart Disease<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
-            <li><div class="campaign">Optum<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
-            <li><div class="campaign">#Healthcare<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
-            <li><div class="campaign">Asthma<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
-            <li><div class="campaign">#StopSmoking<img src="img/dismiss.png" alt="dismiss" class="close-x"></div></li>
+            <li>
+                <div class="campaign">Heart Disease<img src="img/dismiss.png" alt="dismiss" class="close-x"><div class="campaign-bg"></div></div>
+            </li>
+            <li>
+                <div class="campaign">Optum<img src="img/dismiss.png" alt="dismiss" class="close-x"><div class="campaign-bg"></div></div>
+            </li>
+            <li>
+                <div class="campaign">#Healthcare<img src="img/dismiss.png" alt="dismiss" class="close-x"><div class="campaign-bg"></div></div>
+            </li>
+            <li>
+                <div class="campaign">Asthma<img src="img/dismiss.png" alt="dismiss" class="close-x"><div class="campaign-bg"></div></div>
+                
+            </li>
+            <li>
+                <div class="campaign">#StopSmoking<img src="img/dismiss.png" alt="dismiss" class="close-x"><div class="campaign-bg"></div></div>
+            </li>
         </ul>
-
-        <li><div id="addCampaign" class="orange-button cartoBold">Create Campaign</div></li>
-
+        <div id="addCampaign" class="orange-button cartoBold">Create Campaign</div>
     </form>
 </div>
-
-<!-- <ul id="stats">
-    <li>
-        <span id="generalTweetCount" class="cartoBold">0</span>
-        <br />TWEETS SENT
-    </li>
-    <li>
-        <span id="generalCountriesCount" class="cartoBold">0</span>
-        <br />ACTIVE COUNTRIES
-    </li>
-    <li>
-        <span id="generalTimer" class="cartoBold">0</span>
-        <br />ELAPSED TIME
-    </li>
-    <li>
-        <span id="tweetsPersecond" class="cartoBold">0</span>
-        <br />TWEETS/SEC
-    </li>
-</ul> -->
 
 <!-- Campaign form modal -->
 <div id="demo-instructions" class="hidden">
