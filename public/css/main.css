@@ -648,7 +648,7 @@ span.dismiss img {
 	padding:6px 30px 6px 16px;
 	border-radius:5px;
 	text-align:left;
-	color:#343741;
+    font-size:larger;
 	margin: 15px 0;
 	position: relative;
 }
