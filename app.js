@@ -164,7 +164,9 @@
 
   app.post('/tweet-spam', function(req, res) {
     trackKeywords(req.body.keyword.split(','));
-    res.send(200);
+    res.json(200, {
+      keywords: req.body.keyword.split(',')
+    });
 
     // request({
     //   url: 'http://hackathon.hollow.io/',
