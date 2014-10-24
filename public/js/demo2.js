@@ -541,7 +541,7 @@ YouAreHereDisplayCallback.prototype = {
 };
 
 
-
+var tweetsPerCountry = {};
 var RecycleTweets = [];
 var RecycleTweetsTags = [];
 function cleanExpiredTweets(scene)
@@ -888,7 +888,6 @@ function createScene()
 
 
     var numberOfTweets = 0;
-    var tweetsPerCountry = {};
     var tweetsHashTags = {};
 
     var createGoToLocation = function(location) {
@@ -1074,7 +1073,7 @@ function createScene()
             if (lastUpdateStatistics === undefined) {
                 lastUpdateStatistics = currentTime;
             }
-            if (currentTime - lastUpdateStatistics > 2.0) {
+            if (currentTime - lastUpdateStatistics > 1.0) {
                 updateCountryStats(tweetsPerCountry);
                 updateNumberOfCountry(tweetsPerCountry);
                 updateTweetsStats(numberOfTweets);
@@ -1232,6 +1231,8 @@ jQuery(document).ready(function () {
 
   jQuery("#campaignSearch").submit(function (e) {
     e.preventDefault();
+    tweetsPerCountry = {};
+    $("#countries").html(countriesTemplate);
     jQuery.ajax({
       type: 'POST',
       url: '/tweet-spam',
@@ -1241,6 +1242,8 @@ jQuery(document).ready(function () {
 
   jQuery("#live-search-button").click(function (e) {
     e.preventDefault();
+    tweetsPerCountry = {};
+    $("#countries").html(countriesTemplate);
     jQuery.ajax({
       type: 'POST',
       url: '/tweet-spam',
@@ -1253,3 +1256,45 @@ jQuery(document).ready(function () {
         jQuery(this).find(".campaign-bg").addClass("active");
     });
 });
+
+var countriesTemplate = '<p class="countries--header">Countries</p> \
+<li> \
+    <div class="flag"></div> \
+    <span class="countryName"></span> \
+    <span class="tweetCount cartoBold"></span> \
+</li> \
+<li> \
+    <div class="flag"></div> \
+    <span class="countryName"></span> \
+    <span class="tweetCount"></span> \
+</li> \
+<li> \
+    <div class="flag"></div> \
+    <span class="countryName"></span> \
+    <span class="tweetCount"></span> \
+</li> \
+<li> \
+    <div class="flag"></div> \
+    <span class="countryName"></span> \
+    <span class="tweetCount"></span> \
+</li> \
+<li> \
+    <div class="flag"></div> \
+    <span class="countryName"></span> \
+    <span class="tweetCount"></span> \
+</li> \
+<li> \
+    <div class="flag"></div> \
+    <span class="countryName"></span> \
+    <span class="tweetCount"></span> \
+</li> \
+<li> \
+    <div class="flag"></div> \
+    <span class="countryName"></span> \
+    <span class="tweetCount"></span> \
+</li> \
+<li> \
+    <div class="flag"></div> \
+    <span class="countryName"></span> \
+    <span class="tweetCount"></span> \
+</li>';
