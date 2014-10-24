@@ -1,0 +1,260 @@
+latitude	longitude	name	desc	color	source	precision
+24.4691906	54.3717384	Abu Dhabi	Abu Dhabi, United Arab Emirates		Bing Maps	city/town
+-34.9248009	138.5910034	Adelaide	Adelaide, Australia		Bing Maps	city/town
+36.7405014	3.0095699	Africa/Algiers	Wilaya d’ Alger		Bing Maps	state/province
+-4.2656999	15.2805004	Africa/Brazzaville	Commune de Brazzaville		Bing Maps	state/province
+30.8782597	-84.2081909	Africa/Cairo	Cairo, GA		Bing Maps	city/town
+		Africa/Khartoum	-		Bing Maps
+6.4579601	3.47205	Africa/Lagos	African Ln, Eti-Osa, Nigeria		Bing Maps	street
+47.9363098	-110.5057831	Africa/Lome	Loma, MT		Bing Maps	city/town
+-1.2937698	36.8648491	Africa/Nairobi	Nairobi		Bing Maps	state/province
+63.1746445	-153.7050934	Alaska	Alaska		Bing Maps	state/province
+43.2505112	76.8881226	Almaty	Almaty, Kazakhstan		Bing Maps	city/town
+30.446033	-91.182779	America/Anchorage	America St, Baton Rouge, LA 70802		Bing Maps	street
+18.2264671	-63.0473518	America/Anguilla	Anguilla		Bing Maps	country
+-7.3113899	-48.6211014	America/Araguaina	Araguaína		Bing Maps	county/district
+		America/Argentina/Buenos_Aires	-		Bing Maps
+-25.2983398	-57.6225014	America/Asuncion	Asunción, Paraguay		Bing Maps	city/town
+48.7638016	-91.6218033	America/Atikokan	Atikokan, ON		Bing Maps	city/town
+33.6796799	-117.8208618	America/Bahia	Bahia, Irvine, CA 92614		Bing Maps	street
+		America/Bahia_Banderas	-		Bing Maps
+13.1780987	-59.5485954	America/Barbados	Barbados		Bing Maps	country
+-1.37194	-48.4296608	America/Belem	Passagem América, Belém - PA, 63843-070, Brazil		Bing Maps	street
+4.3153343	-74.1796036	America/Bogota	Capital District		Bing Maps	state/province
+33.6978683	-117.7765274	America/Boise	Boise, Irvine, CA 92604		Bing Maps	street
+-35.4860382	-62.9765091	America/Buenos_Aires	América, Argentina		Bing Maps	city/town
+10.4953699	-66.848877	America/Caracas	Caracas, Venezuela		Bing Maps	city/town
+43.8831711	-85.7898712	America/Chicago	Chicago, Idlewild, MI 49642		Bing Maps	street
+		America/Chihuahua	-		Bing Maps
+-32.1416016	-63.7989426	America/Cordoba	Cordoba		Bing Maps	state/province
+9.8849916	-84.2272339	America/Costa_Rica	Costa Rica		Bing Maps	country
+36.1464882	-90.5163803	America/Dawson	Dawson, Paragould, AR 72450		Bing Maps	street
+39.7400093	-104.9923019	America/Denver	Denver, CO		Bing Maps	city/town
+41.7351608	-83.5291214	America/Detroit	S Dixie Hwy, Erie, MI 48133		Bing Maps	street
+53.4538002	-113.5090027	America/Edmonton	Edmonton, AB		Bing Maps	city/town
+13.6716366	-88.8636322	America/El_Salvador	El Salvador		Bing Maps	country
+18.4657993	-66.1194	America/Fortaleza	La Fortaleza, Puerto Rico		Bing Maps	Neighborhood
+14.6317196	-90.4674377	America/Guatemala	Guatemala City, Guatemala		Bing Maps	city/town
+36.7656784	-78.9287262	America/Halifax	Halifax, VA		Bing Maps	city/town
+18.1434441	-77.34655	America/Jamaica	Jamaica		Bing Maps	country
+45.4408684	-84.7744217	America/La_Paz	Lapaz, Alanson, MI 49706		Bing Maps	street
+43.8746185	-85.8000565	America/Los_Angeles	Los Angeles, Idlewild, MI 49642		Bing Maps	street
+12.1171999	-86.2407913	America/Managua	Managua, Nicaragua		Bing Maps	city/town
+27.0223694	-82.0334091	America/Manaus	Manaus Dr, Punta Gorda, FL 33983		Bing Maps	street
+26.0394001	-80.2857132	America/Mexico_City	Mexico City Dr, Hollywood, FL 33026		Bing Maps	street
+-34.819149	-56.2226295	America/Montevideo	América, 12500 Montevideo, Uruguay		Bing Maps	street
+		America/New_York	-		Bing Maps
+33.4482498	-112.075798	America/Phoenix	Phoenix, AZ		Bing Maps	city/town
+		America/Port_of_Spain	-		Bing Maps
+18.2491398	-66.6280365	America/Puerto_Rico	Puerto Rico		Bing Maps	country
+33.4868507	-117.7083206	America/Regina	Regina, Dana Point, CA 92629		Bing Maps	street
+74.674202	-94.9316025	America/Resolute	Resolute, NU		Bing Maps	city/town
+44.1134415	-83.7214127	America/Santiago	Santiago, MI		Bing Maps	city/town
+-22.9592209	-46.5473289	America/Sao_Paulo	América, Brazil		Bing Maps	Neighborhood
+13.25	-61.2000008	America/St_Vincent	St. Vincent, Saint Vincent and the Grenadines		Bing Maps	Island
+30.5991402	-94.9574509	America/Tijuana	Tijuana, Goodrich, TX 77335		Bing Maps	street
+40.4609489	-80.6064377	America/Toronto	Toronto, OH		Bing Maps	city/town
+49.2811012	-123.0439987	America/Vancouver	Vancouver, BC		Bing Maps	city/town
+37.6044998	-92.3021011	America/Winnipeg	Winnipeg, MO		Bing Maps	city/town
+52.3306999	4.86654	Amsterdam	Amsterdam, Netherlands		Bing Maps	city/town
+-80.4661789	21.346302	Antarctica/Casey	Antarctica		Bing Maps	country
+34.2929649	-111.6646957	Arizona	Arizona		Bing Maps	state/province
+30.73876	-99.1294174	ART	Art, TX		Bing Maps	city/town
+31.6011963	36.3520889	Asia/Amman	Amman		Bing Maps	state/province
+26.0942402	50.5429955	Asia/Bahrain	Bahrain		Bing Maps	country
+		Asia/Bangkok	-		Bing Maps
+		Asia/Calcutta	-		Bing Maps
+-8.5690403	125.5705566	Asia/Dili	Dili, Timor-Leste		Bing Maps	city/town
+24.9455185	55.3724976	Asia/Dubai	Dubai		Bing Maps	state/province
+22.3361568	114.1869659	Asia/Hong_Kong	Hong Kong SAR		Bing Maps	country
+-6.2084169	106.8391876	Asia/Jakarta	Jakarta		Bing Maps	state/province
+31.78232	35.208519	Asia/Jerusalem	Jerusalem		Bing Maps	city/town
+34.5315514	69.125351	Asia/Kabul	Kabul, Afghanistan		Bing Maps	city/town
+32.3233719	-112.0409164	Asia/Karachi	Santa Rosa, AZ		Bing Maps	city/town
+40.6774101	-80.5738602	Asia/Kolkata	Calcutta, OH		Bing Maps	city/town
+		Asia/Kuala_Lumpur	-		Bing Maps
+29.3732109	47.9714203	Asia/Kuwait	Kuwait City, Kuwait		Bing Maps	city/town
+		Asia/Makassar	-		Bing Maps
+14.58743	120.9836807	Asia/Manila	Manila, Philippines		Bing Maps	city/town
+23.6151905	58.5911903	Asia/Muscat	Muscat, Oman		Bing Maps	city/town
+24.6472893	46.7146797	Asia/Riyadh	Riyadh, Saudi Arabia		Bing Maps	city/town
+37.5150185	127.0164719	Asia/Seoul	Seoul, South Korea		Bing Maps	city/town
+39.4423485	-78.1317596	Asia/Shanghai	Shanghai, WV		Bing Maps	city/town
+		Asia/Taipei	-		Bing Maps
+35.6899261	139.6917572	Asia/Tokyo	Tokyo		Bing Maps	state/province
+		Asia/Yekaterinburg	-		Bing Maps
+48.4848518	12.0926304	AST	Ast, BY, Germany		Bing Maps	Neighborhood
+51.1287498	71.4136734	Astana	Astana, Kazakhstan		Bing Maps	city/town
+37.9928017	23.7695007	Athens	Athens, Greece		Bing Maps	city/town
+39.7780991	-79.9156036	Atlantic Time (Canada)	Atlantic, PA		Bing Maps	city/town
+-36.8523293	174.7639008	Auckland	Auckland, New Zealand		Bing Maps	city/town
+-27.4684601	153.0234222	Australia/Brisbane	Brisbane, Australia		Bing Maps	city/town
+-25.5852413	134.5041199	Australia/Lord_Howe	Australia		Bing Maps	country
+-33.8740005	151.2030029	Australia/Sydney	Sydney, Australia		Bing Maps	city/town
+38.4202614	-27.8080826	Azores	Azores		Bing Maps	Island
+33.3418007	44.3935013	Baghdad	Baghdad, Iraq		Bing Maps	city/town
+40.4105988	49.8722496	Baku	Baku, Azerbaijan		Bing Maps	city/town
+13.7533503	100.5048294	Bangkok	Bangkok, Thailand		Bing Maps	city/town
+39.9065704	116.3876495	Beijing	Beijing, China		Bing Maps	city/town
+44.8130989	20.4632607	Belgrade	Belgrade, Serbia		Bing Maps	city/town
+52.5014076	13.4023285	Berlin	Berlin		Bing Maps	state/province
+46.9416008	7.4088602	Bern	Bern, Switzerland		Bing Maps	city/town
+4.3153343	-74.1796036	Bogota	Capital District		Bing Maps	state/province
+-15.7835999	-47.8805008	Brasilia	Brasília, Brazil		Bing Maps	city/town
+48.1696205	17.1295109	Bratislava	Bratislava, Slovakia		Bing Maps	city/town
+-27.4684601	153.0234222	Brisbane	Brisbane, Australia		Bing Maps	city/town
+50.842701	4.3781099	Brussels	Brussels, Belgium		Bing Maps	city/town
+44.4342918	26.1029606	Bucharest	Bucharest, Romania		Bing Maps	city/town
+47.513031	19.1229801	Budapest	Budapest, Hungary		Bing Maps	city/town
+-34.6145554	-58.4458771	Buenos Aires	City of Buenos Aires		Bing Maps	state/province
+30.0454197	31.2421093	Cairo	Cairo, Egypt		Bing Maps	city/town
+-35.3065414	149.1265564	Canberra	Canberra, Australia		Bing Maps	city/town
+15.1830025	-23.7034512	Cape Verde Is.	Cape Verde		Bing Maps	country
+10.4953699	-66.848877	Caracas	Caracas, Venezuela		Bing Maps	city/town
+38.8979301	-77.0364304	Casablanca	White House, DC		Bing Maps	AdministrativeBuilding
+42.3650017	-71.1034012	Central America	Central		Bing Maps	RailwayStation
+14.5831804	121.0577393	Central Time (US & Canada)	Time Zone, Philippines		Bing Maps	AmusementPark
+46.1049309	12.2251701	CET	Cet, Ven., Italy		Bing Maps	Neighborhood
+13.0503302	80.188591	Chennai	Chennai, India		Bing Maps	city/town
+28.8076897	-106.4685822	Chihuahua	Chihuahua		Bing Maps	state/province
+29.5509491	106.5193481	Chongqing	Chongqing, China		Bing Maps	city/town
+55.7132607	12.5349302	Copenhagen	Copenhagen, Denmark		Bing Maps	city/town
+18.9400501	72.8348694	CST	Chhatrapati Shivaji Terminus, India		Bing Maps	RailwayStation
+-12.4610596	130.8416595	Darwin	Darwin City, Australia		Bing Maps	city/town
+23.7132301	90.3995667	Dhaka	Dhaka, Bangladesh		Bing Maps	city/town
+53.3330994	-6.2488899	Dublin	Dublin, Ireland		Bing Maps	city/town
+23.2495041	50.1824417	Eastern Time (US & Canada)	Eastern		Bing Maps	state/province
+55.9541512	-3.20277	Edinburgh	Edinburgh, City of Edinburgh, United Kingdom		Bing Maps	city/town
+-36.9141998	-60.3069496	EET	Eet, Argentina		Bing Maps	HigherEducationFacility
+56.8376884	60.5978088	Ekaterinburg	Yekaterinburg, Russia		Bing Maps	city/town
+58.6937447	25.2416248	EST	Estonia		Bing Maps	country
+52.3416214	4.89217	Europe/Amsterdam	Europaboulevard, 1078 GW Amsterdam, Netherlands		Bing Maps	street
+42.5080109	1.53152	Europe/Andorra	Passatge d'Europa, AD500 Andorra, Andorra		Bing Maps	street
+33.9581299	-83.3732529	Europe/Athens	Athens, GA		Bing Maps	city/town
+44.425869	-69.0079727	Europe/Belfast	Belfast, ME		Bing Maps	city/town
+44.425869	-69.0079727	Europe/Belfast.	Belfast, ME		Bing Maps	city/town
+45.7765007	-111.1777115	Europe/Belgrade	Belgrade, MT		Bing Maps	city/town
+39.9003181	-74.9836273	Europe/Berlin	Europa Blvd, Cherry Hill, NJ 08003		Bing Maps	street
+44.4414597	26.0892906	Europe/Bucharest	Bucharest		Bing Maps	state/province
+53.3330994	-6.2488899	Europe/Dublin	Dublin, Ireland		Bing Maps	city/town
+		Europe/Istanbul	-		Bing Maps
+50.2989235	30.4573765	Europe/Kiev	Kiev		Bing Maps	state/province
+37.1272011	-84.0838013	Europe/London	London, KY		Bing Maps	city/town
+49.5998993	6.1177201	Europe/Luxembourg	Luxembourg, Luxembourg		Bing Maps	city/town
+40.8501816	-101.5430222	Europe/Madrid	Madrid, NE		Bing Maps	city/town
+53.7640572	27.6808853	Europe/Minsk	Minsk		Bing Maps	state/province
+46.7323494	-117.0005417	Europe/Moscow	Moscow, ID		Bing Maps	city/town
+48.1943398	-97.1298828	Europe/Oslo	Oslo, MN		Bing Maps	city/town
+33.6612816	-95.5635605	Europe/Paris	Paris, TX		Bing Maps	city/town
+43.2151604	-75.4533615	Europe/Rome	Rome, NY		Bing Maps	city/town
+43.8594208	18.4357605	Europe/Sarajevo	Sarajevo, Bosnia and Herzegovina		Bing Maps	city/town
+59.3525009	18.0326004	Europe/Stockholm	Stockholm, Sweden		Bing Maps	city/town
+47.399601	8.4952602	Europe/Zurich	Europabrücke, 8049 Zurich Zurich, Switzerland		Bing Maps	street
+-17.6581612	178.1472626	Fiji	Fiji		Bing Maps	country
+6.8085499	-58.1612511	Georgetown	Georgetown, Guyana		Bing Maps	city/town
+65.4046021	-161.2819977	GMT	Granite Mountain Air Station, AK		Bing Maps	Airport
+74.3495483	-41.0898895	Greenland	Greenland		Bing Maps	country
+20.6875992	-103.3511124	Guadalajara	Guadalajara, Mexico		Bing Maps	city/town
+13.4211292	144.7397156	Guam	Guam		Bing Maps	country
+21.0288906	105.8546371	Hanoi	Hanoi, Vietnam		Bing Maps	city/town
+-17.8243809	31.0499401	Harare	Harare, Zimbabwe		Bing Maps	city/town
+19.5985165	-155.5185547	Hawaii	Hawaii		Bing Maps	state/province
+60.2080002	24.8990993	Helsinki	Helsinki, Finland		Bing Maps	city/town
+-42.8811989	147.3320007	Hobart	Hobart, Australia		Bing Maps	city/town
+22.3361568	114.1869659	Hong Kong	Hong Kong SAR		Bing Maps	country
+38.3701096	-82.5559311	HST	Tri-State/Milton J Ferguson Field, WV		Bing Maps	Airport
+39.9198036	-86.2817993	Indiana (East)	Indiana		Bing Maps	state/province
+4.185885	73.5307159	Indian/Maldives	Maldives		Bing Maps	country
+0	-180	International Date Line West	International Date Line		Bing Maps	Ocean
+52.3082695	104.2391891	Irkutsk	Irkutsk, Russia		Bing Maps	city/town
+33.7076797	73.0704727	Islamabad	Islamabad, Pakistan		Bing Maps	city/town
+-33.0425186	-71.5193863	IST	Ist, Chile		Bing Maps	Stadium
+41.06073	28.9877701	Istanbul	Istanbul, Turkey		Bing Maps	city/town
+-6.1714902	106.8275223	Jakarta	Jakarta, Indonesia		Bing Maps	city/town
+31.7446213	35.0083046	Jerusalem	Jerusalem		Bing Maps	state/province
+40.3208504	-78.830452	JST	Johnstown-Cambria County Airport, PA		Bing Maps	Airport
+34.5315514	69.125351	Kabul	Kabul, Afghanistan		Bing Maps	city/town
+58.9277267	163.0230103	Kamchatka	Kamchatka		Bing Maps	state/province
+24.9267101	67.0343704	Karachi	Karāchi, Pakistan		Bing Maps	city/town
+27.6933002	85.3225021	Kathmandu	Kathmandu, Nepal		Bing Maps	city/town
+22.5705395	88.3712387	Kolkata	Kolkata, India		Bing Maps	city/town
+56.0141182	92.8709717	Krasnoyarsk	Krasnoyarsk, Russia		Bing Maps	city/town
+3.1047699	101.6920013	Kuala Lumpur	Kuala Lumpur, Malaysia		Bing Maps	city/town
+29.3219414	47.6024666	Kuwait	Kuwait		Bing Maps	country
+50.4505692	30.5242691	Kyiv	Kyiv, Ukraine		Bing Maps	city/town
+-16.5	-68.1500015	La Paz	La Paz, Bolivia		Bing Maps	city/town
+-12.0561399	-77.0268021	Lima	Lima, Peru		Bing Maps	city/town
+38.7169991	-9.1386404	Lisbon	Lisbon, Portugal		Bing Maps	city/town
+46.0605011	14.5165997	Ljubljana	Ljubljana, Slovenia		Bing Maps	city/town
+51.5064201	-0.12721	London	London, London, United Kingdom		Bing Maps	city/town
+40.4202805	-3.70577	Madrid	Madrid, Community of Madrid, Spain		Bing Maps	city/town
+59.5689011	150.8509979	Magadan	Magadan, Russia		Bing Maps	city/town
+7.2862077	168.7514038	Marshall Is.	Marshall Islands		Bing Maps	country
+23.1999893	-106.4217529	Mazatlan	Mazatlán, Mexico		Bing Maps	city/town
+-37.8242989	144.9779968	Melbourne	Melbourne, Australia		Bing Maps	city/town
+19.2793865	-99.134758	Mexico City	Federal District		Bing Maps	state/province
+37.1090813	-76.4551392	Mid-Atlantic	Mid-Atlantic Pl, Yorktown, VA 23693		Bing Maps	street
+26.687294	-81.8233643	Midway Island	Midway Island, FL		Bing Maps	Island
+53.8832016	27.5042992	Minsk	Minsk, Belarus		Bing Maps	city/town
+6.30304	-10.7956896	Monrovia	Monrovia, Liberia		Bing Maps	city/town
+36.5975914	-121.8967667	Monterrey	Monterey, CA		Bing Maps	city/town
+55.7569695	37.6150208	Moscow	Moscow, Russia		Bing Maps	city/town
+32.6801796	-94.011261	Mountain Time (US & Canada)	Time, Mooringsport, LA 71060		Bing Maps	street
+35.9132729	14.4161863	MST	MST, Malta		Bing Maps	postcode
+18.93013	72.8300934	Mumbai	Mumbai, India		Bing Maps	city/town
+23.6151905	58.5911903	Muscat	Muscat, Oman		Bing Maps	city/town
+28.2070141	-177.3780975	Nairobi	Midway Islands		Bing Maps	country
+-21.3178234	165.298584	New Caledonia	New Caledonia		Bing Maps	country
+28.6082802	77.2008133	New Delhi	New Delhi, India		Bing Maps	city/town
+52.1972466	-60.013382	Newfoundland	Newfoundland and Labrador		Bing Maps	state/province
+55.0397682	82.9102097	Novosibirsk	Novosibirsk, Russia		Bing Maps	city/town
+-21.1333008	-175.1999969	Nuku'alofa	Nuku'alofa, Tonga		Bing Maps	city/town
+34.6775208	135.5129089	Osaka	Osaka, Japan		Bing Maps	city/town
+-36.8523293	174.7639008	Pacific/Auckland	Auckland, New Zealand		Bing Maps	city/town
+21.3048496	-157.8577576	Pacific/Honolulu	Honolulu, HI		Bing Maps	city/town
+36.2780304	-115.1503525	Pacific Time (US & Canada)	Pacific Time Ct, North Las Vegas, NV 89084		Bing Maps	street
+48.8569298	2.3412001	Paris	Paris, Paris, France		Bing Maps	city/town
+-31.9470997	115.8659973	Perth	Perth, Australia		Bing Maps	city/town
+-9.4633198	147.1930389	Port Moresby	Port Moresby, Papua New Guinea		Bing Maps	city/town
+50.1269188	14.4567204	Prague	Prague, Czech Republic		Bing Maps	city/town
+-25.7458706	28.1876297	Pretoria	Pretoria, South Africa		Bing Maps	city/town
+20.7332993	-75.6500015	PST	Preston, Cuba		Bing Maps	Airport
+-0.20567	-78.5087433	Quito	Quito, Ecuador		Bing Maps	city/town
+16.8448105	96.132843	Rangoon	Yangon, Myanmar		Bing Maps	city/town
+57.0276985	24.0447006	Riga	Riga, Latvia		Bing Maps	city/town
+24.6472893	46.7146797	Riyadh	Riyadh, Saudi Arabia		Bing Maps	city/town
+41.9030495	12.4958	Rome	Rome, Laz., Italy		Bing Maps	city/town
+-13.668973	-172.3220215	Samoa	Samoa		Bing Maps	country
+19.4277992	-70.6990967	Santiago	Santiago, Dominican Republic		Bing Maps	city/town
+43.0552521	141.3454742	Sapporo	Sapporo, Japan		Bing Maps	city/town
+43.8594208	18.4357605	Sarajevo	Sarajevo, Bosnia and Herzegovina		Bing Maps	city/town
+54.4185829	-105.8888474	Saskatchewan	Saskatchewan		Bing Maps	state/province
+37.5150185	127.0164719	Seoul	Seoul, South Korea		Bing Maps	city/town
+1.3219959	103.8205338	Singapore	Singapore		Bing Maps	country
+41.9947395	21.4299908	Skopje	Skopje, FYRO Macedonia		Bing Maps	city/town
+42.6781921	23.399044	Sofia	Sofia City		Bing Maps	state/province
+-9.5481129	160.0193024	Solomon Is.	Solomon Islands		Bing Maps	country
+6.8839998	79.9007874	Sri Jayawardenepura	Sri Jayawardenepura, Sri Lanka		Bing Maps	city/town
+59.3525009	18.0326004	Stockholm	Stockholm, Sweden		Bing Maps	city/town
+59.928875	30.2215462	St. Petersburg	St. Petersburg City		Bing Maps	state/province
+-33.8740005	151.2030029	Sydney	Sydney, Australia		Bing Maps	city/town
+25.0474396	121.516098	Taipei	Taipei Railway Station, Taiwan		Bing Maps	RailwayStation
+59.4371986	24.7537003	Tallinn	Tallinn, Estonia		Bing Maps	city/town
+41.3205109	69.3066635	Tashkent	Toshkent, Uzbekistan		Bing Maps	city/town
+41.7256508	44.7930489	Tbilisi	Tbilisi, Georgia		Bing Maps	city/town
+35.6895409	51.4146843	Tehran	Tehran, Iran		Bing Maps	city/town
+32.523201	-117.125	Tijuana	Tijuana, Mexico		Bing Maps	city/town
+35.6832085	139.8089447	Tokyo	Tokyo, Japan		Bing Maps	city/town
+47.9221001	106.9169693	Ulaan Bataar	Ulaanbaatar, Mongolia		Bing Maps	city/town
+43.7878685	87.5862732	Urumqi	Ürümqi, China		Bing Maps	city/town
+35.0457191	-85.3009796	UTC	University of Tennessee at Chattanooga, TN		Bing Maps	HigherEducationFacility
+48.2084274	16.377821	Vienna	Vienna		Bing Maps	state/province
+54.6906204	25.2698307	Vilnius	Vilnius, Lithuania		Bing Maps	city/town
+43.1157188	131.8857574	Vladivostok	Vladivostok, Russia		Bing Maps	city/town
+48.7038994	44.4523582	Volgograd	Volgograd, Russia		Bing Maps	city/town
+52.2287483	21.0062504	Warsaw	Warsaw, Poland		Bing Maps	city/town
+-41.2889404	174.7762756	Wellington	Wellington, New Zealand		Bing Maps	city/town
+-13.624444	33.5299988	West Central Africa	Central Region		Bing Maps	Region
+62.0285988	129.7173462	Yakutsk	Yakutsk, Russia		Bing Maps	city/town
+40.1833344	44.5166664	Yerevan	Yerevan, Armenia		Bing Maps	AncientSite
+45.801899	15.9470997	Zagreb	Zagreb, Croatia		Bing Maps	city/town

@@ -1162,14 +1162,12 @@ function createScene()
             }
         };
 
-        var lat, lng, rand;
+        var lat, lng, timezone;
         if (tweet.geo) {
-            LatLongArray.push(LatLongArray[tweet.place.country]);
             lat=tweet.geo.coordinates[0];
             lng=tweet.geo.coordinates[1];
             displayTweet({ 'lat' : lat, 'lng' : lng }, tweet);
         } else if (tweet.place !== null) {
-            LatLongArray.push(LatLongArray[tweet.place.country]);
             // compute location from bounding box
             var bb = tweet.place.bounding_box.coordinates[0];
             var center = osg.Vec2.copy(bb[0]);
@@ -1181,12 +1179,13 @@ function createScene()
             lat=center[1];
             lng=center[0];
             displayTweet({ 'lat' : lat, 'lng' : lng }, tweet);
+        } else if(tweet.user.time_zone) {
+          timezone = Timezone2LatLng[tweet.user.time_zone];
+          tweet.place = { country: timezone.country };
+          timezone.lat += (Math.random()*2.0 - 1.0);
+          timezone.lng += (Math.random()*2.0 - 1.0);
+          displayTweet({ 'lat' : timezone.lat, 'lng' : timezone.lng }, tweet);
         } else {
-          rand = LatLongArray[Math.floor(Math.random() * LatLongArray.length)];
-          tweet.place = { country: rand.ctry };
-          rand.lat = parseFloat(rand.lat) + (Math.random()*2.0 - 1.0);
-          rand.long = parseFloat(rand.long) + (Math.random()*2.0 - 1.0);
-          displayTweet({ 'lat' : rand.lat, 'lng' : rand.long }, tweet);
           //displayTweet({ 'lat' : getRandomInRange(-180, 180, 3), 'lng' : getRandomInRange(-180, 180, 3) }, tweet);
           //getLatLongFromLocation(tweet, displayTweet);
         }
