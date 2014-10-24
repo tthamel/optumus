@@ -115,12 +115,16 @@
   var server = http.createServer(app);
   var io = require('socket.io').listen(server);
 
+  var current_keywords = [];
+
   // SOCKET IO CODE
   io.on('connection', function (socket) {
     console.log('connected');
 
+    trackKeywords(SEARCH_KEYWORDS);
+
     twitterStreamClient.on('tweet', function (tweet) {
-      SEARCH_KEYWORDS.forEach(function (keyword) {
+      current_keywords.forEach(function (keyword) {
         if(tweet.text.toLowerCase().indexOf(keyword) >= 0) tweet.keyword = keyword;
       });
       io.sockets.emit('tweet', tweet);
@@ -128,18 +132,14 @@
   });
 
   function trackKeywords(arr) {
-      _.each(SEARCH_KEYWORDS, function (keyword) {
+      _.each(current_keywords, function (keyword) {
         twitterStreamClient.untrack(keyword);
       });
-      SEARCH_KEYWORDS = arr;
+      current_keywords = _.clone(arr);
       _.each(arr, function (keyword) {
         twitterStreamClient.track(keyword);
       });
   }
-
-  _.each(SEARCH_KEYWORDS, function (keyword) {
-    twitterStreamClient.track(keyword);
-  });
 
   // view engine setup
   app.set('views', path.join(__dirname, 'app'));
